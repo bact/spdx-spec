@@ -543,10 +543,10 @@
                         { "$ref": "#/$defs/Element" }
                     ]
                 },
-                { "const": "spdx:ExpandedLicensing/NoAssertionLicense" },
-                { "const": "spdx:ExpandedLicensing/NoneLicense" },
-                { "const": "spdx:Core/NoAssertionElement" },
-                { "const": "spdx:Core/NoneElement" },
+                { "const": "expandedlicensing_NoAssertionLicense" },
+                { "const": "expandedlicensing_NoneLicense" },
+                { "const": "NoAssertionElement" },
+                { "const": "NoneElement" },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
             ]
         },
@@ -2640,8 +2640,8 @@
                         { "$ref": "#/$defs/simplelicensing_AnyLicenseInfo" }
                     ]
                 },
-                { "const": "spdx:ExpandedLicensing/NoAssertionLicense" },
-                { "const": "spdx:ExpandedLicensing/NoneLicense" },
+                { "const": "expandedlicensing_NoAssertionLicense" },
+                { "const": "expandedlicensing_NoneLicense" },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
             ]
         },
@@ -3899,8 +3899,8 @@
                         { "$ref": "#/$defs/expandedlicensing_IndividualLicensingInfo" }
                     ]
                 },
-                { "const": "spdx:ExpandedLicensing/NoAssertionLicense" },
-                { "const": "spdx:ExpandedLicensing/NoneLicense" },
+                { "const": "expandedlicensing_NoAssertionLicense" },
+                { "const": "expandedlicensing_NoneLicense" },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
             ]
         },
