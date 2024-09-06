@@ -53,7 +53,9 @@ jobs:
         run: pip install -r spec-parser/requirements.txt
       - name: Install pandoc (required by spec-parser to generate Tex)
         run: |
-          dpkg -i https://github.com/jgm/pandoc/releases/download/3.3/pandoc-3.3-1-amd64.deb
+          wget -O __pandoc.deb https://github.com/jgm/pandoc/releases/download/3.3/pandoc-3.3-1-amd64.deb
+          dpkg -i __pandoc.deb
+          rm __pandoc.deb
           pandoc --version
       - name: Build model files
         run: |
