@@ -53,7 +53,7 @@ jobs:
       - name: Install pre-requisites for spec-parser
         run: pip install -r spec-parser/requirements.txt
       - name: Install fake pandoc (to bypass the Tex generation in CI)
-        run: (echo #!/bin/sh; echo exit 0) > /usr/local/bin/pandoc ; chmod +x /usr/local/bin/pandoc
+        run: (echo "#!/bin/sh;" echo "exit 0") > /usr/local/bin/pandoc ; chmod +x /usr/local/bin/pandoc
       - name: Build model files and print the output for inspection
         run: python3 spec-parser/main.py spdx-3-model/model $PARSER_OUT_BASE_DIR
       - name: Create directories for model (MkDocs) and RDF files
