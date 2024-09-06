@@ -81,11 +81,7 @@ jobs:
           ls $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR
           echo "===================="
           cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-context.jsonld spdx-spec/docs/rdf/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.dot spdx-spec/docs/rdf/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.json-ld spdx-spec/docs/rdf/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.pretty-xml spdx-spec/docs/rdf/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.ttl spdx-spec/docs/rdf/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.xml spdx-spec/docs/rdf/
+          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.* spdx-spec/docs/rdf/
           cp spdx-spec/docs/rdf/spdx-model.json-ld spdx-spec/docs/rdf/spdx-model.jsonld
           echo "===================="
           echo "Target (after copy): spdx-spec/docs/rdf"
@@ -93,11 +89,7 @@ jobs:
           ls spdx-spec/docs/rdf
           echo "===================="
           cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-context.jsonld spdx-spec/docs/model/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.dot spdx-spec/docs/model/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.json-ld spdx-spec/docs/model/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.pretty-xml spdx-spec/docs/model/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.ttl spdx-spec/docs/model/
-          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.xml spdx-spec/docs/model/
+          cp $PARSER_OUT_BASE_DIR/$PARSER_OUT_RDF_DIR/spdx-model.* spdx-spec/docs/rdf/
           cp spdx-spec/docs/model/spdx-model.json-ld spdx-spec/docs/model/spdx-model.jsonld
           echo "===================="
           echo "Target (after copy): spdx-spec/docs/model"
