@@ -60,7 +60,7 @@ jobs:
         #   rm __pandoc.deb
       - name: Build model files and print the output for inspection
         run: |
-          (echo /bin/sh; echo exit 0) > pandoc ; chmod +x pandoc
+          (echo /bin/sh; echo exit 0) > spec-parser/pandoc ; chmod +x spec-parser/pandoc
           python3 spec-parser/main.py spdx-3-model/model $PARSER_OUT_BASE_DIR
       - name: Create directories for model (MkDocs) and RDF files
         run: |
