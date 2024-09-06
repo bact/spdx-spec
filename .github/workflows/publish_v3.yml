@@ -54,10 +54,9 @@ jobs:
         run: pip install -r spec-parser/requirements.txt
       - name: Install pandoc (required by spec-parser to generate Tex)
         run: |
-          wget -O __pandoc.deb $PANDOC_DEB_URL
+          wget -q -O __pandoc.deb $PANDOC_DEB_URL
           dpkg --no-triggers -i __pandoc.deb
           rm __pandoc.deb
-          pandoc --version
       - name: Build model files and print the output for inspection
         run: |
           python3 spec-parser/main.py spdx-3-model/model $PARSER_OUT_BASE_DIR
