@@ -57,10 +57,10 @@ jobs:
           dpkg -i __pandoc.deb
           rm __pandoc.deb
           pandoc --version
-      - name: Build model files
+      - name: Build model files and print the output for inspection
         run: |
           python3 spec-parser/main.py spdx-3-model/model $PARSER_OUT_BASE_DIR
-          tree $PARSER_OUT_BASE_DIR
+          find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
       - name: Create directories for model (MkDocs) and RDF files
         run: |
           mkdir spdx-spec/docs/rdf
