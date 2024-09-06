@@ -28,6 +28,7 @@ jobs:
       MKDOCS_FULL_YML: "__mkdocs-full.yml"  # MkDocs configuration combined with model list
       REDIRECT_MAP_PATH: "etc/redirect-map.csv"             # redirect map
       REDIRECT_TEMPLATE_PATH: "etc/redirect-template.html"  # redirect HTML template
+      PANDOC_DEB_URL: "https://github.com/jgm/pandoc/releases/download/3.3/pandoc-3.3-1-amd64.deb"  # pandoc Debian package
     steps:
       - name: Checkout spdx-spec
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  #v4.1.7
@@ -53,7 +54,7 @@ jobs:
         run: pip install -r spec-parser/requirements.txt
       - name: Install pandoc (required by spec-parser to generate Tex)
         run: |
-          wget -O __pandoc.deb https://github.com/jgm/pandoc/releases/download/3.3/pandoc-3.3-1-amd64.deb
+          wget -O __pandoc.deb $PANDOC_DEB_URL
           dpkg --no-triggers -i __pandoc.deb
           rm __pandoc.deb
           pandoc --version
