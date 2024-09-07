@@ -55,8 +55,8 @@ jobs:
       - name: Install fake pandoc (to bypass the Tex generation in CI)
         run: |
           echo $PATH
-          echo '#!/bin/sh' > /usr/local/bin/pandoc
-          echo 'exit 0' >> /usr/local/bin/pandoc
+          echo "#!/bin/sh" > /usr/local/bin/pandoc
+          echo "exit 0" >> /usr/local/bin/pandoc
           chmod +x /usr/local/bin/pandoc
           pandoc
       - name: Build model files
