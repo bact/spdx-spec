@@ -495,10 +495,8 @@
                         { "$ref": "#/$defs/build_Build" },
                         { "$ref": "#/$defs/Agent" },
                         { "$ref": "#/$defs/Annotation" },
-                        { "$ref": "#/$defs/Artifact" },
                         { "$ref": "#/$defs/Bom" },
                         { "$ref": "#/$defs/Bundle" },
-                        { "$ref": "#/$defs/ElementCollection" },
                         { "$ref": "#/$defs/LifecycleScopedRelationship" },
                         { "$ref": "#/$defs/Organization" },
                         { "$ref": "#/$defs/Person" },
@@ -511,10 +509,7 @@
                         { "$ref": "#/$defs/expandedlicensing_CustomLicense" },
                         { "$ref": "#/$defs/expandedlicensing_CustomLicenseAddition" },
                         { "$ref": "#/$defs/expandedlicensing_DisjunctiveLicenseSet" },
-                        { "$ref": "#/$defs/expandedlicensing_ExtendableLicense" },
                         { "$ref": "#/$defs/expandedlicensing_IndividualLicensingInfo" },
-                        { "$ref": "#/$defs/expandedlicensing_License" },
-                        { "$ref": "#/$defs/expandedlicensing_LicenseAddition" },
                         { "$ref": "#/$defs/expandedlicensing_ListedLicense" },
                         { "$ref": "#/$defs/expandedlicensing_ListedLicenseException" },
                         { "$ref": "#/$defs/expandedlicensing_OrLaterOperator" },
@@ -529,18 +524,13 @@
                         { "$ref": "#/$defs/security_VexFixedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexNotAffectedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexUnderInvestigationVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VexVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_Vulnerability" },
-                        { "$ref": "#/$defs/simplelicensing_AnyLicenseInfo" },
                         { "$ref": "#/$defs/simplelicensing_LicenseExpression" },
                         { "$ref": "#/$defs/simplelicensing_SimpleLicensingText" },
                         { "$ref": "#/$defs/software_File" },
                         { "$ref": "#/$defs/software_Package" },
                         { "$ref": "#/$defs/software_Sbom" },
-                        { "$ref": "#/$defs/software_Snippet" },
-                        { "$ref": "#/$defs/software_SoftwareArtifact" },
-                        { "$ref": "#/$defs/Element" }
+                        { "$ref": "#/$defs/software_Snippet" }
                     ]
                 },
                 { "const": "expandedlicensing_NoAssertionLicense" },
@@ -654,8 +644,7 @@
                         { "$ref": "#/$defs/Bom" },
                         { "$ref": "#/$defs/Bundle" },
                         { "$ref": "#/$defs/SpdxDocument" },
-                        { "$ref": "#/$defs/software_Sbom" },
-                        { "$ref": "#/$defs/ElementCollection" }
+                        { "$ref": "#/$defs/software_Sbom" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -1202,8 +1191,7 @@
                     "anyOf": [
                         { "$ref": "#/$defs/Hash" },
                         { "$ref": "#/$defs/PackageVerificationCode" },
-                        { "$ref": "#/$defs/software_ContentIdentifier" },
-                        { "$ref": "#/$defs/IntegrityMethod" }
+                        { "$ref": "#/$defs/software_ContentIdentifier" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -1563,14 +1551,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Relationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Relationship_props" }
             ]
@@ -1592,8 +1580,6 @@
                         { "$ref": "#/$defs/security_VexFixedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexNotAffectedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexUnderInvestigationVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VexVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VulnAssessmentRelationship" },
                         { "$ref": "#/$defs/Relationship" }
                     ]
                 },
@@ -1882,14 +1868,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "SpdxDocument" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/SpdxDocument_props" }
             ]
@@ -1998,14 +1984,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Tool" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Tool_props" }
             ]
@@ -2176,8 +2162,7 @@
                     "unevaluatedProperties": false,
                     "anyOf": [
                         { "$ref": "#/$defs/expandedlicensing_CustomLicenseAddition" },
-                        { "$ref": "#/$defs/expandedlicensing_ListedLicenseException" },
-                        { "$ref": "#/$defs/expandedlicensing_LicenseAddition" }
+                        { "$ref": "#/$defs/expandedlicensing_ListedLicenseException" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -2244,14 +2229,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_ListedLicenseException" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_ListedLicenseException_props" }
             ]
@@ -2343,14 +2328,31 @@
         "prop_extension_CdxPropertyEntry_extension_cdxPropValue": {
                     "type": "string"
         },
+        "extension_Extension": {
+            "allOf": [
+                {
+                    "type": "object",
+                    "unevaluatedProperties": true,
+                    "properties": {
+                        "@id": { "$ref": "#/$defs/BlankNode" },
+                        "type": {
+                            "allOf":  [
+                                { "$ref": "#/$defs/IRI" },
+                                { "not": { "const": "extension_Extension" } }
+                            ]
+                        }
+                    }
+                },
+                { "$ref": "#/$defs/extension_Extension_props" }
+            ]
+        },
         "extension_Extension_derived": {
             "anyOf": [
                 {
                     "type": "object",
-                    "unevaluatedProperties": false,
                     "anyOf": [
                         { "$ref": "#/$defs/extension_CdxPropertiesExtension" },
-                        { "$ref": "#/$defs/extension_Extension" }
+                        { "$ref": "#/$defs/extension_Extension_props" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -2549,9 +2551,7 @@
                         { "$ref": "#/$defs/security_VexAffectedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexFixedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexNotAffectedVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VexUnderInvestigationVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VexVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VulnAssessmentRelationship" }
+                        { "$ref": "#/$defs/security_VexUnderInvestigationVulnAssessmentRelationship" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -2630,14 +2630,11 @@
                         { "$ref": "#/$defs/expandedlicensing_ConjunctiveLicenseSet" },
                         { "$ref": "#/$defs/expandedlicensing_CustomLicense" },
                         { "$ref": "#/$defs/expandedlicensing_DisjunctiveLicenseSet" },
-                        { "$ref": "#/$defs/expandedlicensing_ExtendableLicense" },
                         { "$ref": "#/$defs/expandedlicensing_IndividualLicensingInfo" },
-                        { "$ref": "#/$defs/expandedlicensing_License" },
                         { "$ref": "#/$defs/expandedlicensing_ListedLicense" },
                         { "$ref": "#/$defs/expandedlicensing_OrLaterOperator" },
                         { "$ref": "#/$defs/expandedlicensing_WithAdditionOperator" },
-                        { "$ref": "#/$defs/simplelicensing_LicenseExpression" },
-                        { "$ref": "#/$defs/simplelicensing_AnyLicenseInfo" }
+                        { "$ref": "#/$defs/simplelicensing_LicenseExpression" }
                     ]
                 },
                 { "const": "expandedlicensing_NoAssertionLicense" },
@@ -2660,14 +2657,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "simplelicensing_LicenseExpression" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/simplelicensing_LicenseExpression_props" }
             ]
@@ -2728,14 +2725,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "simplelicensing_SimpleLicensingText" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/simplelicensing_SimpleLicensingText_props" }
             ]
@@ -3024,14 +3021,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "build_Build" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/build_Build_props" }
             ]
@@ -3171,14 +3168,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Agent" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Agent_props" }
             ]
@@ -3213,14 +3210,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Annotation" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Annotation_props" }
             ]
@@ -3290,9 +3287,7 @@
                         { "$ref": "#/$defs/security_Vulnerability" },
                         { "$ref": "#/$defs/software_File" },
                         { "$ref": "#/$defs/software_Package" },
-                        { "$ref": "#/$defs/software_Snippet" },
-                        { "$ref": "#/$defs/software_SoftwareArtifact" },
-                        { "$ref": "#/$defs/Artifact" }
+                        { "$ref": "#/$defs/software_Snippet" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -3408,14 +3403,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Bundle" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Bundle_props" }
             ]
@@ -3532,14 +3527,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "LifecycleScopedRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/LifecycleScopedRelationship_props" }
             ]
@@ -3584,14 +3579,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Organization" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Organization_props" }
             ]
@@ -3623,14 +3618,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Person" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Person_props" }
             ]
@@ -3662,14 +3657,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "SoftwareAgent" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/SoftwareAgent_props" }
             ]
@@ -3701,14 +3696,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_ConjunctiveLicenseSet" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_ConjunctiveLicenseSet_props" }
             ]
@@ -3757,14 +3752,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_CustomLicenseAddition" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_CustomLicenseAddition_props" }
             ]
@@ -3796,14 +3791,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_DisjunctiveLicenseSet" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_DisjunctiveLicenseSet_props" }
             ]
@@ -3854,10 +3849,8 @@
                     "unevaluatedProperties": false,
                     "anyOf": [
                         { "$ref": "#/$defs/expandedlicensing_CustomLicense" },
-                        { "$ref": "#/$defs/expandedlicensing_License" },
                         { "$ref": "#/$defs/expandedlicensing_ListedLicense" },
-                        { "$ref": "#/$defs/expandedlicensing_OrLaterOperator" },
-                        { "$ref": "#/$defs/expandedlicensing_ExtendableLicense" }
+                        { "$ref": "#/$defs/expandedlicensing_OrLaterOperator" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -3878,14 +3871,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_IndividualLicensingInfo" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_IndividualLicensingInfo_props" }
             ]
@@ -3921,8 +3914,7 @@
                     "unevaluatedProperties": false,
                     "anyOf": [
                         { "$ref": "#/$defs/expandedlicensing_CustomLicense" },
-                        { "$ref": "#/$defs/expandedlicensing_ListedLicense" },
-                        { "$ref": "#/$defs/expandedlicensing_License" }
+                        { "$ref": "#/$defs/expandedlicensing_ListedLicense" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -4007,14 +3999,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_ListedLicense" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_ListedLicense_props" }
             ]
@@ -4058,14 +4050,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_OrLaterOperator" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_OrLaterOperator_props" }
             ]
@@ -4106,14 +4098,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_WithAdditionOperator" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_WithAdditionOperator_props" }
             ]
@@ -4216,14 +4208,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_CvssV2VulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_CvssV2VulnAssessmentRelationship_props" }
             ]
@@ -4279,14 +4271,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_CvssV3VulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_CvssV3VulnAssessmentRelationship_props" }
             ]
@@ -4355,14 +4347,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_CvssV4VulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_CvssV4VulnAssessmentRelationship_props" }
             ]
@@ -4431,14 +4423,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_EpssVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_EpssVulnAssessmentRelationship_props" }
             ]
@@ -4502,14 +4494,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_ExploitCatalogVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_ExploitCatalogVulnAssessmentRelationship_props" }
             ]
@@ -4567,14 +4559,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_SsvcVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_SsvcVulnAssessmentRelationship_props" }
             ]
@@ -4624,8 +4616,7 @@
                         { "$ref": "#/$defs/security_VexAffectedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexFixedVulnAssessmentRelationship" },
                         { "$ref": "#/$defs/security_VexNotAffectedVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VexUnderInvestigationVulnAssessmentRelationship" },
-                        { "$ref": "#/$defs/security_VexVulnAssessmentRelationship" }
+                        { "$ref": "#/$defs/security_VexUnderInvestigationVulnAssessmentRelationship" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -4658,14 +4649,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_Vulnerability" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_Vulnerability_props" }
             ]
@@ -4744,8 +4735,7 @@
                         { "$ref": "#/$defs/dataset_DatasetPackage" },
                         { "$ref": "#/$defs/software_File" },
                         { "$ref": "#/$defs/software_Package" },
-                        { "$ref": "#/$defs/software_Snippet" },
-                        { "$ref": "#/$defs/software_SoftwareArtifact" }
+                        { "$ref": "#/$defs/software_Snippet" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -4877,14 +4867,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "Bom" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/Bom_props" }
             ]
@@ -4917,14 +4907,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "expandedlicensing_CustomLicense" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/expandedlicensing_CustomLicense_props" }
             ]
@@ -4956,14 +4946,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_VexAffectedVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_VexAffectedVulnAssessmentRelationship_props" }
             ]
@@ -5022,14 +5012,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_VexFixedVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_VexFixedVulnAssessmentRelationship_props" }
             ]
@@ -5061,14 +5051,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_VexNotAffectedVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_VexNotAffectedVulnAssessmentRelationship_props" }
             ]
@@ -5132,14 +5122,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "security_VexUnderInvestigationVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/security_VexUnderInvestigationVulnAssessmentRelationship_props" }
             ]
@@ -5171,14 +5161,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "software_File" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/software_File_props" }
             ]
@@ -5226,14 +5216,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "software_Package" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/software_Package_props" }
             ]
@@ -5297,14 +5287,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "software_Sbom" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/software_Sbom_props" }
             ]
@@ -5356,14 +5346,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "software_Snippet" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/software_Snippet_props" }
             ]
@@ -5416,14 +5406,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "ai_AIPackage" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/ai_AIPackage_props" }
             ]
@@ -5614,14 +5604,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "dataset_DatasetPackage" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/dataset_DatasetPackage_props" }
             ]
