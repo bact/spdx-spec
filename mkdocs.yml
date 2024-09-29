@@ -9,6 +9,7 @@ use_directory_urls: true
 theme:
   name: readthedocs
   sticky_navigation: true
+  custom_dir: website_blocks/
 plugins:
 - search
 - mike:
