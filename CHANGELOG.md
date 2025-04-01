@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## Post-3.0.1 (2025-04-01)
+
+### Changes since 3.0.1
+
+* Fixed general typos and formatting issues.
+* See changes in the model from
+  [the model change log](https://github.com/spdx/spdx-3-model/blob/main/CHANGELOG.md).
+
 ## 3.0.1 (2024-12-17)
 
 * Changes in document structure and location.
