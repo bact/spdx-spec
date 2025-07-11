@@ -20,13 +20,13 @@ and edits and review if they render as intended.
   | +- docs/          |            (manual)           v
   | |  +- annexes/    |               |          spec-parser
   | |  +- front/      |               |               |
-  | |  +- images/  <---- PNG images --+               |
+  | |  +- images/  <----- PNG images -+               |
   | |  +- licenses/   |                               |
   | |  +- model/   <----- Processed Markdown files ---+
   | |  +- rdf/     <----- RDF files ------------------+
-  | |  +- *.md        |
-  | |  +- index.md    |
-  | +- mkdocs.yml     |
+  | |  +- *.md        |                               |
+  | |  +- index.md    |                               |
+  | +- mkdocs.yml  <----- model-files.yml ------------+
   +-------------------+
           |
        MkDocs
@@ -201,8 +201,10 @@ to incorporate the changes into the complete configuration file.
 The SPDX specifications on <https://spdx.github.io/spdx-spec/> are built
 by using a workflow in
 [`.github/workflows/publish_v3.yml`](.github/workflows/publish_v3.yml).
-This workflow uses [mike](https://github.com/jimporter/mike) to publish
+This workflow uses [`mike`](https://github.com/jimporter/mike) to publish
 multiple versions of MkDocs-powered documentation.
+
+The workflow also generates RDF files from the model files.
 
 The published versions, their titles, and aliases are listed in the file
 [versions.json](https://github.com/spdx/spdx-spec/blob/gh-pages/versions.json)
