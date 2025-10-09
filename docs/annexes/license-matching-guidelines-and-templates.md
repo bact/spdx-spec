@@ -3,7 +3,9 @@
 ## SPDX License List matching guidelines
 
 The SPDX License List Matching Guidelines provide guidelines to be used for the purposes of matching licenses and license exceptions against those included on the [SPDX License List](https://spdx.org/licenses/).
+
 There is no intent here to make a judgment or interpretation, but merely to ensure that when one SPDX user identifies a license as "BSD-3-Clause," for example, it is indeed the same license as what someone else identifies as "BSD-3-Clause" and the same license as what is listed on the SPDX License List.
+
 As noted here, some of the matching guidelines are implemented in the XML files of the SPDX License List repository.
 
 ## How these guidelines are applied
@@ -148,6 +150,16 @@ Where a line starts with a bullet, number, letter, or some form of a list item (
 The following XML tag is used to implement this guideline: `<bullet>`
 
 For example: `<bullet>1.0</bullet>`
+
+## Line-break hyphenation
+
+### Purpose
+
+To avoid the possibility of a non-match due to line-break hyphenation in the license text.
+
+### Guideline
+
+If a word is hyphenated for a line break - where the first part ends one line and the second part begins the next — the two fragments must be rejoined, and the hyphen must be removed, to form the complete word.
 
 ## Varietal word spelling
 
