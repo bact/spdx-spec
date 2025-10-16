@@ -496,6 +496,7 @@
                         { "$ref": "#/$defs/https_spdxorgrdf31termsCoreRelationship" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSoftwareAgent" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSpdxDocument" },
+                        { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSupportRelationship" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsCoreTool" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsDatasetDatasetPackage" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingConjunctiveLicenseSet" },
@@ -1115,14 +1116,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/IndividualElement" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreIndividualElement_props" }
             ]
@@ -1498,14 +1499,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Relationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreRelationship_props" }
             ]
@@ -1518,6 +1519,7 @@
                     "anyOf": [
                         { "$ref": "#/$defs/https_spdxorgrdf31termsCoreContactPointRelationship" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsCoreLifecycleScopedRelationship" },
+                        { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSupportRelationship" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityCvssV2VulnAssessmentRelationship" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityCvssV3VulnAssessmentRelationship" },
                         { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityCvssV4VulnAssessmentRelationship" },
@@ -1611,10 +1613,13 @@
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/descendantOf",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/describes",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/doesNotAffect",
+                    "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/evaluatedOn",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/expandsTo",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/exploitCreatedBy",
+                    "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/finetunedOn",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/fixedBy",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/fixedIn",
+                    "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/follows",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/foundBy",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/generates",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/hasAddedFile",
@@ -1650,6 +1655,8 @@
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/other",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/packagedBy",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/patchedBy",
+                    "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/pretrainedOn",
+                    "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/providesSupportFor",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/publishedBy",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/reportedBy",
                     "https://spdx.org/rdf/3.1/terms/Core/RelationshipType/republishedBy",
@@ -1755,14 +1762,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/SpdxDocument" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSpdxDocument_props" }
             ]
@@ -1821,6 +1828,62 @@
         "prop_https_spdxorgrdf31termsCoreSpdxDocument_namespaceMap": {
                 "$ref": "#/$defs/https_spdxorgrdf31termsCoreNamespaceMap_derived"
         },
+        "https_spdxorgrdf31termsCoreSupportRelationship": {
+            "allOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "spdxId": { "$ref": "#/$defs/IRI" },
+                        "type": {
+                            "oneOf": [
+                                { "const": "https://spdx.org/rdf/3.1/terms/Core/SupportRelationship" }
+                            ]
+                        }
+                    },
+                    "required": ["spdxId"]
+                },
+                { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSupportRelationship_props" }
+            ]
+        },
+        "https_spdxorgrdf31termsCoreSupportRelationship_derived": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "unevaluatedProperties": false,
+                    "anyOf": [
+                        { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSupportRelationship" }
+                    ]
+                },
+                { "$ref": "#/$defs/BlankNodeOrIRI" }
+            ]
+        },
+        "https_spdxorgrdf31termsCoreSupportRelationship_props": {
+            "allOf": [
+                { "$ref": "#/$defs/https_spdxorgrdf31termsCoreRelationship_props" },
+                {
+                    "type": "object",
+                    "properties": {
+                        "https://spdx.org/rdf/3.1/terms/Core/supportLevel": {
+                            "$ref": "#/$defs/prop_https_spdxorgrdf31termsCoreSupportRelationship_supportLevel"
+                        }
+                    },
+                    "required": [
+                        "https://spdx.org/rdf/3.1/terms/Core/supportLevel"
+                    ]
+                }
+            ]
+        },
+        "prop_https_spdxorgrdf31termsCoreSupportRelationship_supportLevel": {
+                "enum": [
+                    "https://spdx.org/rdf/3.1/terms/Core/SupportType/deployed",
+                    "https://spdx.org/rdf/3.1/terms/Core/SupportType/development",
+                    "https://spdx.org/rdf/3.1/terms/Core/SupportType/endOfSupport",
+                    "https://spdx.org/rdf/3.1/terms/Core/SupportType/limitedSupport",
+                    "https://spdx.org/rdf/3.1/terms/Core/SupportType/noAssertion",
+                    "https://spdx.org/rdf/3.1/terms/Core/SupportType/noSupport",
+                    "https://spdx.org/rdf/3.1/terms/Core/SupportType/support"
+                ]
+        },
         "https_spdxorgrdf31termsCoreSupportType": {
             "allOf": [
                 {
@@ -1864,14 +1927,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Tool" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreTool_props" }
             ]
@@ -2086,14 +2149,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/ListedLicenseException" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingListedLicenseException_props" }
             ]
@@ -2185,13 +2248,31 @@
         "prop_https_spdxorgrdf31termsExtensionCdxPropertyEntry_cdxPropValue": {
                     "type": "string"
         },
+        "https_spdxorgrdf31termsExtensionExtension": {
+            "allOf": [
+                {
+                    "type": "object",
+                    "unevaluatedProperties": true,
+                    "properties": {
+                        "@id": { "$ref": "#/$defs/BlankNodeOrIRI" },
+                        "type": {
+                            "allOf":  [
+                                { "$ref": "#/$defs/IRI" },
+                                { "not": { "const": "https://spdx.org/rdf/3.1/terms/Extension/Extension" } }
+                            ]
+                        }
+                    }
+                },
+                { "$ref": "#/$defs/https_spdxorgrdf31termsExtensionExtension_props" }
+            ]
+        },
         "https_spdxorgrdf31termsExtensionExtension_derived": {
             "anyOf": [
                 {
                     "type": "object",
-                    "unevaluatedProperties": false,
                     "anyOf": [
-                        { "$ref": "#/$defs/https_spdxorgrdf31termsExtensionCdxPropertiesExtension" }
+                        { "$ref": "#/$defs/https_spdxorgrdf31termsExtensionCdxPropertiesExtension" },
+                        { "$ref": "#/$defs/https_spdxorgrdf31termsExtensionExtension_props" }
                     ]
                 },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
@@ -2487,14 +2568,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Service/SoftwareService" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsServiceSoftwareService_props" }
             ]
@@ -2604,14 +2685,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/SimpleLicensing/LicenseExpression" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSimpleLicensingLicenseExpression_props" }
             ]
@@ -2672,14 +2753,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/SimpleLicensing/SimpleLicensingText" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSimpleLicensingSimpleLicensingText_props" }
             ]
@@ -2929,14 +3010,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Build/Build" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsBuildBuild_props" }
             ]
@@ -3076,14 +3157,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Agent" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreAgent_props" }
             ]
@@ -3118,14 +3199,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Annotation" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreAnnotation_props" }
             ]
@@ -3311,14 +3392,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Bundle" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreBundle_props" }
             ]
@@ -3358,14 +3439,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/ContactPointRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreContactPointRelationship_props" }
             ]
@@ -3488,14 +3569,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/LifecycleScopedRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreLifecycleScopedRelationship_props" }
             ]
@@ -3540,14 +3621,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Organization" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreOrganization_props" }
             ]
@@ -3579,14 +3660,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Person" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCorePerson_props" }
             ]
@@ -3618,14 +3699,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/SoftwareAgent" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSoftwareAgent_props" }
             ]
@@ -3657,14 +3738,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/ConjunctiveLicenseSet" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingConjunctiveLicenseSet_props" }
             ]
@@ -3713,14 +3794,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/CustomLicenseAddition" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingCustomLicenseAddition_props" }
             ]
@@ -3752,14 +3833,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/DisjunctiveLicenseSet" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingDisjunctiveLicenseSet_props" }
             ]
@@ -3832,14 +3913,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/IndividualLicensingInfo" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingIndividualLicensingInfo_props" }
             ]
@@ -3958,14 +4039,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/ListedLicense" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingListedLicense_props" }
             ]
@@ -4009,14 +4090,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/OrLaterOperator" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingOrLaterOperator_props" }
             ]
@@ -4057,14 +4138,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/WithAdditionOperator" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingWithAdditionOperator_props" }
             ]
@@ -4167,14 +4248,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/CvssV2VulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityCvssV2VulnAssessmentRelationship_props" }
             ]
@@ -4230,14 +4311,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/CvssV3VulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityCvssV3VulnAssessmentRelationship_props" }
             ]
@@ -4306,14 +4387,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/CvssV4VulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityCvssV4VulnAssessmentRelationship_props" }
             ]
@@ -4382,14 +4463,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/EpssVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityEpssVulnAssessmentRelationship_props" }
             ]
@@ -4453,14 +4534,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/ExploitCatalogVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityExploitCatalogVulnAssessmentRelationship_props" }
             ]
@@ -4518,14 +4599,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/SsvcVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecuritySsvcVulnAssessmentRelationship_props" }
             ]
@@ -4608,14 +4689,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/Vulnerability" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityVulnerability_props" }
             ]
@@ -4833,14 +4914,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Core/Bom" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreBom_props" }
             ]
@@ -4873,14 +4954,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/ExpandedLicensing/CustomLicense" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsExpandedLicensingCustomLicense_props" }
             ]
@@ -4912,14 +4993,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/VexAffectedVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityVexAffectedVulnAssessmentRelationship_props" }
             ]
@@ -4974,14 +5055,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/VexFixedVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityVexFixedVulnAssessmentRelationship_props" }
             ]
@@ -5013,14 +5094,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/VexNotAffectedVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityVexNotAffectedVulnAssessmentRelationship_props" }
             ]
@@ -5084,14 +5165,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Security/VexUnderInvestigationVulnAssessmentRelationship" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSecurityVexUnderInvestigationVulnAssessmentRelationship_props" }
             ]
@@ -5123,14 +5204,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Software/File" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSoftwareFile_props" }
             ]
@@ -5178,14 +5259,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Software/Package" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSoftwarePackage_props" }
             ]
@@ -5249,14 +5330,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Software/Sbom" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSoftwareSbom_props" }
             ]
@@ -5308,14 +5389,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Software/Snippet" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsSoftwareSnippet_props" }
             ]
@@ -5368,14 +5449,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/AI/AIPackage" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsAIAIPackage_props" }
             ]
@@ -5566,14 +5647,14 @@
                 {
                     "type": "object",
                     "properties": {
-                        "@id": { "$ref": "#/$defs/IRI" },
+                        "spdxId": { "$ref": "#/$defs/IRI" },
                         "type": {
                             "oneOf": [
                                 { "const": "https://spdx.org/rdf/3.1/terms/Dataset/DatasetPackage" }
                             ]
                         }
                     },
-                    "required": ["@id"]
+                    "required": ["spdxId"]
                 },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsDatasetDatasetPackage_props" }
             ]
@@ -5812,6 +5893,7 @@
                                 "https://spdx.org/rdf/3.1/terms/Core/RelationshipCompleteness",
                                 "https://spdx.org/rdf/3.1/terms/Core/RelationshipType",
                                 "https://spdx.org/rdf/3.1/terms/Core/SpdxDocument",
+                                "https://spdx.org/rdf/3.1/terms/Core/SupportRelationship",
                                 "https://spdx.org/rdf/3.1/terms/Core/SupportType",
                                 "https://spdx.org/rdf/3.1/terms/Core/Tool",
                                 "https://spdx.org/rdf/3.1/terms/Dataset/ConfidentialityLevelType",
@@ -5903,6 +5985,7 @@
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreRelationshipCompleteness" },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreRelationshipType" },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSpdxDocument" },
+                { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSupportRelationship" },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreSupportType" },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsCoreTool" },
                 { "$ref": "#/$defs/https_spdxorgrdf31termsDatasetConfidentialityLevelType" },

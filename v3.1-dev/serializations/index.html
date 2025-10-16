@@ -154,6 +154,8 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../model/Core/Classes/SpdxDocument/">SpdxDocument</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../model/Core/Classes/SupportRelationship/">SupportRelationship</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../model/Core/Classes/Tool/">Tool</a>
                 </li>
     </ul>
@@ -872,7 +874,7 @@
               
                 <h1 id="model-and-serializations">Model and serializations</h1>
 <h2 id="overview">Overview</h2>
-<p>This specification defines the data model of the SPDX standard, describing
+<p>This document defines the data model of the SPDX standard, describing
 every piece of information about systems with software components. The data
 model is based on the Resource Description Framework (RDF) extensible
 knowledge representation data model, which provides a flexible and extensible
@@ -955,11 +957,11 @@ defined terms while ensuring data interoperability across different systems.</p>
 <p>The SPDX global JSON-LD context file must be used universally for all SPDX
 documents in JSON-LD format that adhere to a specific SPDX version.</p>
 <p>SPDX global JSON-LD context file is available at:
-<a href="https://spdx.org/rdf/3.0.1/spdx-context.jsonld">https://spdx.org/rdf/3.0.1/spdx-context.jsonld</a></p>
+<a href="https://spdx.org/rdf/3.1/spdx-context.jsonld">https://spdx.org/rdf/3.1/spdx-context.jsonld</a></p>
 <p>All SPDX documents in JSON-LD format must include a reference to the SPDX
 global context file at the top level.
 This reference is achieved using the following JSON construct:</p>
-<pre class="codehilite"><code class="language-json">&quot;@context&quot;: &quot;https://spdx.org/rdf/3.0.1/spdx-context.jsonld&quot;
+<pre class="codehilite"><code class="language-json">&quot;@context&quot;: &quot;https://spdx.org/rdf/3.1/spdx-context.jsonld&quot;
 </code></pre>
 
 <p>The SPDX context file defines aliases for specific JSON-LD properties to
@@ -984,9 +986,9 @@ specification if it adheres to the following two validation criteria:</p>
   SHACL shape restrictions to further specify these constraints.</li>
 </ul>
 <p>The SPDX 3 JSON Schema is available at:
-<a href="https://spdx.org/schema/3.0.1/spdx-json-schema.json">https://spdx.org/schema/3.0.1/spdx-json-schema.json</a></p>
+<a href="https://spdx.org/schema/3.1/spdx-json-schema.json">https://spdx.org/schema/3.1/spdx-json-schema.json</a></p>
 <p>The SPDX 3 OWL ontology is available at:
-<a href="https://spdx.org/rdf/3.0.1/spdx-model.ttl">https://spdx.org/rdf/3.0.1/spdx-model.ttl</a></p>
+<a href="https://spdx.org/rdf/3.1/spdx-model.ttl">https://spdx.org/rdf/3.1/spdx-model.ttl</a></p>
               
             </div>
           </div><footer>
