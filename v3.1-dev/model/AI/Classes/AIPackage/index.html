@@ -148,6 +148,8 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Classes/Relationship/">Relationship</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Core/Classes/Requirement/">Requirement</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Classes/SoftwareAgent/">SoftwareAgent</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Classes/SpdxDocument/">SpdxDocument</a>
@@ -211,6 +213,8 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/definitionSource/">definitionSource</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/description/">description</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/devLifecycleStage/">devLifecycleStage</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/element/">element</a>
                 </li>
@@ -293,6 +297,12 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/relationshipType/">relationshipType</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/releaseTime/">releaseTime</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/requirementRationale/">requirementRationale</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/requirementStatement/">requirementStatement</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/requirementUUID/">requirementUUID</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Properties/rootElement/">rootElement</a>
                 </li>
@@ -1112,6 +1122,58 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Operations</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Operations/Operations/">Description</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Classes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Classes/ExportControlClassification/">ExportControlClassification</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Classes/ExportControlClassificationAssessment/">ExportControlClassificationAssessment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Classes/Project/">Project</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Properties</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessedElement/">assessedElement</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentContext/">assessmentContext</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentResult/">assessmentResult</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentTimestamp/">assessmentTimestamp</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessor/">assessor</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/exportClassification/">exportClassification</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/exportControlClassificationResult/">exportControlClassificationResult</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/exportControlSpecification/">exportControlSpecification</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/exportingCountry/">exportingCountry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectContract/">projectContract</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectEndTime/">projectEndTime</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectOwner/">projectOwner</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectSponsor/">projectSponsor</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectStartTime/">projectStartTime</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectTitle/">projectTitle</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/weight/">weight</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">annexes</span></p>
               <ul>
@@ -1159,14 +1221,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <!-- Automatically generated by spec-parser v3.0.1 on 2025-11-22T14:17:01.148889+00:00 -->
+                <!-- Automatically generated by spec-parser v3.0.1 on 2026-01-07T15:29:16.375324+00:00 -->
 <!-- SPDX-License-Identifier: Community-Spec-1.0 -->
 
 <h1 id="aipackage">AIPackage</h1>
 <h2 id="summary">Summary</h2>
-<p>Specifies an AI package and its associated information.</p>
+<p>A Package that contains AI software or an AI model.</p>
 <h2 id="description">Description</h2>
-<p>Metadata information that can be added to a package to describe an AI application or trained AI model.</p>
+<p>A Package that contains code or a model that provides
+artificial intelligence capabilities.</p>
 <h2 id="metadata">Metadata</h2>
 <p><code>https://spdx.org/rdf/3.1/terms/AI/AIPackage</code></p>
 <table>
@@ -1321,26 +1384,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../../../Core/Properties/releaseTime/">releaseTime</a> from <a href="../../../Core/Classes/Artifact/">/Core/Artifact</a></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td><a href="../../../Core/Properties/suppliedBy/">suppliedBy</a> from <a href="../../../Core/Classes/Artifact/">/Core/Artifact</a></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td><a href="../../../Software/Properties/downloadLocation/">downloadLocation</a> from <a href="../../../Software/Classes/Package/">/Software/Package</a></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td><a href="../../../Software/Properties/packageVersion/">packageVersion</a> from <a href="../../../Software/Classes/Package/">/Software/Package</a></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
 <td><a href="../../../Software/Properties/primaryPurpose/">primaryPurpose</a> from <a href="../../../Software/Classes/SoftwareArtifact/">/Software/SoftwareArtifact</a></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;"></td>
@@ -1427,7 +1470,7 @@
 <tr>
 <td><a href="../../../Software/Properties/downloadLocation/">downloadLocation</a></td>
 <td>xsd:anyURI</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr>
@@ -1541,7 +1584,7 @@
 <tr>
 <td><a href="../../../Software/Properties/packageVersion/">packageVersion</a></td>
 <td>xsd:string</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr>
@@ -1553,7 +1596,7 @@
 <tr>
 <td><a href="../../../Core/Properties/releaseTime/">releaseTime</a></td>
 <td><a href="../../../Core/Datatypes/DateTime/">DateTime</a></td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr>
@@ -1595,7 +1638,7 @@
 <tr>
 <td><a href="../../../Core/Properties/suppliedBy/">suppliedBy</a></td>
 <td><a href="../../../Core/Classes/Agent/">Agent</a></td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr>
