@@ -16708,7 +16708,7 @@
           "name": "customIdToLicense",
           "fqname": "/SimpleLicensing/customIdToLicense",
           "summary": "Maps a \"LicenseRef-\" string for a custom license or a \"AdditionRef-\" string for\na custom license addition to a `CustomLicense`, a `CustomLicenseAddition`, or a\n`SimpleLicensingText`.",
-          "description": "Within a license expression, references can be made to a custom license or a\ncustom license addition.\n\nThe [License Expression syntax](../../../annexes/spdx-license-expressions.md)\ndictates any reference starting with a\n\"LicenseRef-\" or \"AdditionRef-\" refers to license or addition text not found in\nthe official [SPDX License List](https://spdx.org/licenses/).\n\nThe key for the DictionaryEntry is the string used in the license expression\nand the value is target Element, which must be a CustomLicense,\nCustomLicenseAddition, or SimpleLicensingText.",
+          "description": "Within a license expression, references can be made to a custom license or a\ncustom license addition.\n\nThe [License Expression syntax](../../../annexes/spdx-license-expressions.md)\ndictates any reference starting with a\n\"LicenseRef-\" or \"AdditionRef-\" refers to license or addition text not found in\nthe official [SPDX License List](https://spdx.org/licenses/).\n\nThe key for the ElementMap is the string used in the license expression\nand the value is target Element, which must be a CustomLicense,\nCustomLicenseAddition, or SimpleLicensingText.",
           "metadata": {
             "name": "customIdToLicense",
             "Nature": "ObjectProperty",
