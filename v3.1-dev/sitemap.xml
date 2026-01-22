@@ -1073,7 +1073,7 @@
          <lastmod>2026-01-22</lastmod>
     </url>
     <url>
-         <loc>https://spdx.github.io/spdx-spec/v3.0.1/model/FunctionalSafety/Properties/evidenceCategories/</loc>
+         <loc>https://spdx.github.io/spdx-spec/v3.0.1/model/FunctionalSafety/Properties/evidenceCategory/</loc>
          <lastmod>2026-01-22</lastmod>
     </url>
     <url>
@@ -1849,7 +1849,7 @@
          <lastmod>2026-01-22</lastmod>
     </url>
     <url>
-         <loc>https://spdx.github.io/spdx-spec/v3.0.1/model/SupplyChain/Properties/plannedProductofResponsibilityChange/</loc>
+         <loc>https://spdx.github.io/spdx-spec/v3.0.1/model/SupplyChain/Properties/plannedProductOfResponsibilityChange/</loc>
          <lastmod>2026-01-22</lastmod>
     </url>
     <url>
@@ -1877,7 +1877,7 @@
          <lastmod>2026-01-22</lastmod>
     </url>
     <url>
-         <loc>https://spdx.github.io/spdx-spec/v3.0.1/model/SupplyChain/Properties/vaildState/</loc>
+         <loc>https://spdx.github.io/spdx-spec/v3.0.1/model/SupplyChain/Properties/validState/</loc>
          <lastmod>2026-01-22</lastmod>
     </url>
     <url>

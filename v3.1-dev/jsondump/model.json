@@ -222,10 +222,10 @@
               "maxCount": "1",
               "fqname": "/FunctionalSafety/evidenceUUID"
             },
-            "evidenceCategories": {
+            "evidenceCategory": {
               "type": "EvidenceType",
               "minCount": "0",
-              "fqname": "/FunctionalSafety/evidenceCategories",
+              "fqname": "/FunctionalSafety/evidenceCategory",
               "maxCount": "*"
             }
           },
@@ -246,12 +246,12 @@
               "fullname": "/FunctionalSafety/evidenceUUID",
               "fulltype": "/Core/ExternalIdentifier"
             },
-            "evidenceCategories": {
+            "evidenceCategory": {
               "type": "EvidenceType",
               "minCount": "0",
-              "fqname": "/FunctionalSafety/evidenceCategories",
+              "fqname": "/FunctionalSafety/evidenceCategory",
               "maxCount": "*",
-              "fullname": "/FunctionalSafety/evidenceCategories",
+              "fullname": "/FunctionalSafety/evidenceCategory",
               "fulltype": "/FunctionalSafety/EvidenceType"
             },
             "from": {
@@ -535,6 +535,26 @@
         }
       },
       "properties": {
+        "/FunctionalSafety/evidenceCategory": {
+          "py/object": "spec_parser.model.Property",
+          "ns": {
+            "py/id": 9
+          },
+          "license": "Community-Spec-1.0",
+          "name": "evidenceCategory",
+          "fqname": "/FunctionalSafety/evidenceCategory",
+          "summary": "evidenceCategory refers to a category of documented or observable proof.",
+          "description": "evidenceCategory refers to a category of documented or observable proof\nused to verify compliance, qualification, or performance.",
+          "metadata": {
+            "name": "evidenceCategory",
+            "Nature": "ObjectProperty",
+            "Range": "EvidenceType"
+          },
+          "iri": "https://spdx.org/rdf/3.1/terms/FunctionalSafety/evidenceCategory",
+          "used_in": [
+            "/FunctionalSafety/EvidenceRelationship"
+          ]
+        },
         "/FunctionalSafety/verificationRationale": {
           "py/object": "spec_parser.model.Property",
           "ns": {
@@ -675,26 +695,6 @@
             "/FunctionalSafety/EvaluationResult"
           ]
         },
-        "/FunctionalSafety/evidenceCategories": {
-          "py/object": "spec_parser.model.Property",
-          "ns": {
-            "py/id": 9
-          },
-          "license": "Community-Spec-1.0",
-          "name": "evidenceCategories",
-          "fqname": "/FunctionalSafety/evidenceCategories",
-          "summary": "evidenceCategories refers to categories of documented or observable proof.",
-          "description": "evidenceCategories refers to categories of documented or observable proof used to verify compliance, qualification, or performance.",
-          "metadata": {
-            "name": "evidenceCategories",
-            "Nature": "ObjectProperty",
-            "Range": "EvidenceType"
-          },
-          "iri": "https://spdx.org/rdf/3.1/terms/FunctionalSafety/evidenceCategories",
-          "used_in": [
-            "/FunctionalSafety/EvidenceRelationship"
-          ]
-        },
         "/FunctionalSafety/evaluation": {
           "py/object": "spec_parser.model.Property",
           "ns": {
@@ -778,7 +778,7 @@
           "entries": {
             "report": "Structured documentation of test results, inspections, or analyses.",
             "log": "Time-stamped records capturing system or operational data recorded as usually as a response to specific triggers in a specified environment.",
-            "recording": "Captured datastream like audio, video, or any other kind of continuous electronic capture of events, behaviour or conditions.",
+            "recording": "Captured datastream like audio, video, or any other kind of continuous electronic capture of events, behavior or conditions.",
             "observation": "Documentation of direct monitoring or witnessing of the demonstration of processes, tests, or any kind of system responses during a specified timeframe under specified environmental conditions.",
             "other": "Any other relevant type of proof or documentation not covered above."
           },
@@ -11430,7 +11430,7 @@
             "publishedBy": "Designates a `from` Vulnerability was made available for public use or reference by each `to` Agent.",
             "reportedBy": "Designates a `from` Vulnerability was first reported to a project, vendor, or tracking database for formal identification by each `to` Agent.",
             "republishedBy": "Designates a `from` Vulnerability's details were tracked, aggregated, and/or enriched to improve context (i.e. NVD) by each `to` Agent.",
-            "resolved": "The `to` OutOfSpecAction is resolved in the `from` ResolutionAction",
+            "resolved": "The `to` OutOfSpecAction is resolved in the `from` ResolutionAction.",
             "runsOn": "The `from` Element (the instructions) of runs on each `to` Hardware (processing element), during a LifecycleScopeType period.",
             "serializedInArtifact": "The `from` SpdxDocument can be found in a serialized form in each `to` Artifact.",
             "testedOn": "The `from` Element has been tested on the `to` Element(s).",
@@ -20849,10 +20849,10 @@
             "Instantiability": "Concrete"
           },
           "properties": {
-            "vaildState": {
+            "validState": {
               "type": "State",
               "minCount": "1",
-              "fqname": "/SupplyChain/vaildState",
+              "fqname": "/SupplyChain/validState",
               "maxCount": "*"
             }
           },
@@ -20867,12 +20867,12 @@
           ],
           "direct_subclasses": [],
           "all_properties": {
-            "vaildState": {
+            "validState": {
               "type": "State",
               "minCount": "1",
-              "fqname": "/SupplyChain/vaildState",
+              "fqname": "/SupplyChain/validState",
               "maxCount": "*",
-              "fullname": "/SupplyChain/vaildState",
+              "fullname": "/SupplyChain/validState",
               "fulltype": "/SupplyChain/State"
             },
             "processVersion": {
@@ -24377,10 +24377,10 @@
               "maxCount": "1",
               "fqname": "/SupplyChain/plannedPrevious"
             },
-            "plannedProductofResponsibilityChange": {
+            "plannedProductOfResponsibilityChange": {
               "type": "/Core/Element",
               "minCount": "0",
-              "fqname": "/SupplyChain/plannedProductofResponsibilityChange",
+              "fqname": "/SupplyChain/plannedProductOfResponsibilityChange",
               "maxCount": "*"
             },
             "responsibilityCategory": {
@@ -24416,12 +24416,12 @@
               "fullname": "/SupplyChain/plannedPrevious",
               "fulltype": "/Core/Agent"
             },
-            "plannedProductofResponsibilityChange": {
+            "plannedProductOfResponsibilityChange": {
               "type": "/Core/Element",
               "minCount": "0",
-              "fqname": "/SupplyChain/plannedProductofResponsibilityChange",
+              "fqname": "/SupplyChain/plannedProductOfResponsibilityChange",
               "maxCount": "*",
-              "fullname": "/SupplyChain/plannedProductofResponsibilityChange",
+              "fullname": "/SupplyChain/plannedProductOfResponsibilityChange",
               "fulltype": "/Core/Element"
             },
             "responsibilityCategory": {
@@ -26138,6 +26138,26 @@
             "/SupplyChain/ResponsibilityChangeProcess"
           ]
         },
+        "/SupplyChain/plannedProductOfResponsibilityChange": {
+          "py/object": "spec_parser.model.Property",
+          "ns": {
+            "py/id": 2716
+          },
+          "license": "Community-Spec-1.0",
+          "name": "plannedProductOfResponsibilityChange",
+          "fqname": "/SupplyChain/plannedProductOfResponsibilityChange",
+          "summary": "This is the planned product associated with the change of responsibility.",
+          "description": "The planned product or service related to a responsibility change is identified in this field.",
+          "metadata": {
+            "name": "plannedProductOfResponsibilityChange",
+            "Nature": "ObjectProperty",
+            "Range": "/Core/Element"
+          },
+          "iri": "https://spdx.org/rdf/3.1/terms/SupplyChain/plannedProductOfResponsibilityChange",
+          "used_in": [
+            "/SupplyChain/ResponsibilityChangeProcess"
+          ]
+        },
         "/SupplyChain/boundaryParameter": {
           "py/object": "spec_parser.model.Property",
           "ns": {
@@ -26158,26 +26178,6 @@
             "/SupplyChain/BoundaryDefinitionAction"
           ]
         },
-        "/SupplyChain/vaildState": {
-          "py/object": "spec_parser.model.Property",
-          "ns": {
-            "py/id": 2716
-          },
-          "license": "Community-Spec-1.0",
-          "name": "vaildState",
-          "fqname": "/SupplyChain/vaildState",
-          "summary": "The vaild state for DefinedStateProcess.",
-          "description": "The vaild state for DefinedStateProcess.",
-          "metadata": {
-            "name": "vaildState",
-            "Nature": "ObjectProperty",
-            "Range": "State"
-          },
-          "iri": "https://spdx.org/rdf/3.1/terms/SupplyChain/vaildState",
-          "used_in": [
-            "/SupplyChain/DefinedStateProcess"
-          ]
-        },
         "/SupplyChain/plannedStorageLocation": {
           "py/object": "spec_parser.model.Property",
           "ns": {
@@ -26196,26 +26196,6 @@
           "iri": "https://spdx.org/rdf/3.1/terms/SupplyChain/plannedStorageLocation",
           "used_in": [
             "/SupplyChain/StorageProcess"
-          ]
-        },
-        "/SupplyChain/plannedProductofResponsibilityChange": {
-          "py/object": "spec_parser.model.Property",
-          "ns": {
-            "py/id": 2716
-          },
-          "license": "Community-Spec-1.0",
-          "name": "plannedProductofResponsibilityChange",
-          "fqname": "/SupplyChain/plannedProductofResponsibilityChange",
-          "summary": "This is the planned product associated with the change of responsibility.",
-          "description": "The planned product or service related to a responsibility change is identified in this field.",
-          "metadata": {
-            "name": "plannedProductofResponsibilityChange",
-            "Nature": "ObjectProperty",
-            "Range": "/Core/Element"
-          },
-          "iri": "https://spdx.org/rdf/3.1/terms/SupplyChain/plannedProductofResponsibilityChange",
-          "used_in": [
-            "/SupplyChain/ResponsibilityChangeProcess"
           ]
         },
         "/SupplyChain/forPickupLocation": {
@@ -26276,6 +26256,26 @@
           "iri": "https://spdx.org/rdf/3.1/terms/SupplyChain/pickupLocation",
           "used_in": [
             "/SupplyChain/TransportAction"
+          ]
+        },
+        "/SupplyChain/validState": {
+          "py/object": "spec_parser.model.Property",
+          "ns": {
+            "py/id": 2716
+          },
+          "license": "Community-Spec-1.0.",
+          "name": "validState",
+          "fqname": "/SupplyChain/validState",
+          "summary": "The valid state for DefinedStateProcess.",
+          "description": "The valid state for DefinedStateProcess.",
+          "metadata": {
+            "name": "validState",
+            "Nature": "ObjectProperty",
+            "Range": "State"
+          },
+          "iri": "https://spdx.org/rdf/3.1/terms/SupplyChain/validState",
+          "used_in": [
+            "/SupplyChain/DefinedStateProcess"
           ]
         },
         "/SupplyChain/decisionProcess": {
@@ -30850,28 +30850,28 @@
     }
   },
   "properties": {
-    "/FunctionalSafety/verificationRationale": {
+    "/FunctionalSafety/evidenceCategory": {
       "py/id": 89
     },
-    "/FunctionalSafety/verificationUUID": {
+    "/FunctionalSafety/verificationRationale": {
       "py/id": 92
     },
-    "/FunctionalSafety/verificationMethod": {
+    "/FunctionalSafety/verificationUUID": {
       "py/id": 95
     },
-    "/FunctionalSafety/evidenceUUID": {
+    "/FunctionalSafety/verificationMethod": {
       "py/id": 98
     },
-    "/FunctionalSafety/evaluationBasedOn": {
+    "/FunctionalSafety/evidenceUUID": {
       "py/id": 101
     },
-    "/FunctionalSafety/verificationPrecondition": {
+    "/FunctionalSafety/evaluationBasedOn": {
       "py/id": 104
     },
-    "/FunctionalSafety/evaluationRationale": {
+    "/FunctionalSafety/verificationPrecondition": {
       "py/id": 107
     },
-    "/FunctionalSafety/evidenceCategories": {
+    "/FunctionalSafety/evaluationRationale": {
       "py/id": 110
     },
     "/FunctionalSafety/evaluation": {
@@ -31465,25 +31465,25 @@
     "/SupplyChain/plannedCurrent": {
       "py/id": 3903
     },
-    "/SupplyChain/boundaryParameter": {
+    "/SupplyChain/plannedProductOfResponsibilityChange": {
       "py/id": 3906
     },
-    "/SupplyChain/vaildState": {
+    "/SupplyChain/boundaryParameter": {
       "py/id": 3909
     },
     "/SupplyChain/plannedStorageLocation": {
       "py/id": 3912
     },
-    "/SupplyChain/plannedProductofResponsibilityChange": {
+    "/SupplyChain/forPickupLocation": {
       "py/id": 3915
     },
-    "/SupplyChain/forPickupLocation": {
+    "/SupplyChain/currentState": {
       "py/id": 3918
     },
-    "/SupplyChain/currentState": {
+    "/SupplyChain/pickupLocation": {
       "py/id": 3921
     },
-    "/SupplyChain/pickupLocation": {
+    "/SupplyChain/validState": {
       "py/id": 3924
     },
     "/SupplyChain/decisionProcess": {
