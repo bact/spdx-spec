@@ -3,9 +3,8 @@
     "version": "v3.1-dev",
     "title": "v3.1-dev",
     "aliases": [
-      "develop",
-      "3.1",
-      "dev"
+      "dev",
+      "develop"
     ]
   }
 ]
