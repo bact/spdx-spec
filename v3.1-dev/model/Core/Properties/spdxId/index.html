@@ -168,11 +168,7 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" >Properties</a>
     <ul class="current">
-                <li class="toctree-l3"><a class="reference internal" href="../actionEndTime/">actionEndTime</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../actionLocation/">actionLocation</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../actionStartTime/">actionStartTime</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../additionalInformation/">additionalInformation</a>
                 </li>
@@ -286,8 +282,6 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../prefix/">prefix</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../processRationale/">processRationale</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../processReadiness/">processReadiness</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../processVersion/">processVersion</a>
@@ -298,11 +292,11 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../quantity/">quantity</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../rationale/">rationale</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../relationshipType/">relationshipType</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../releaseTime/">releaseTime</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../requirementRationale/">requirementRationale</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../requirementStatement/">requirementStatement</a>
                 </li>
@@ -1144,7 +1138,7 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentResult/">assessmentResult</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentTimestamp/">assessmentTimestamp</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentTime/">assessmentTime</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessor/">assessor</a>
                 </li>
@@ -1158,13 +1152,9 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectContract/">projectContract</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectEndTime/">projectEndTime</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectOwner/">projectOwner</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectSponsor/">projectSponsor</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectStartTime/">projectStartTime</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectTitle/">projectTitle</a>
                 </li>
@@ -1194,8 +1184,6 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/evaluationBasedOn/">evaluationBasedOn</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/evaluationRationale/">evaluationRationale</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/evidenceCategory/">evidenceCategory</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/evidenceUUID/">evidenceUUID</a>
@@ -1205,8 +1193,6 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/verificationPostcondition/">verificationPostcondition</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/verificationPrecondition/">verificationPrecondition</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/verificationRationale/">verificationRationale</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../FunctionalSafety/Properties/verificationUUID/">verificationUUID</a>
                 </li>
@@ -1271,17 +1257,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <!-- Automatically generated by spec-parser v3.0.1 on 2026-02-11T10:12:33.629814+00:00 -->
+                <!-- Automatically generated by spec-parser v3.0.1 on 2026-03-03T18:17:58.523876+00:00 -->
 <!-- SPDX-License-Identifier: Community-Spec-1.0 -->
 
 <h1 id="spdxid">spdxId</h1>
 <h2 id="summary">Summary</h2>
 <p>Identifies an Element to be referenced by other Elements.</p>
 <h2 id="description">Description</h2>
-<p>An spdxId uniquely identifies an Element which may thereby be referenced by other Elements.
-These references may be internal or external.
-While there may be several versions of the same Element, each one needs to be able to be referred to uniquely
+<p>An spdxId uniquely identifies an Element which may thereby be referenced by
+other Elements.
+These references may be internal or external.</p>
+<p>While there may be several versions of the same Element,
+each one needs to be able to be referred to uniquely
 so that relationships between Elements can be clearly articulated.</p>
+<p>Best practices for creating spdxIds for SPDX documents (and their Elements) on
+the public internet are as follows:</p>
+<p>SPDX document:</p>
+<pre class="codehilite"><code class="language-text">https://[CreatorWebsite]/[pathToSpdx]/[DocumentName]-[UUID]
+</code></pre>
+
+<p>Element inside an SPDX document:</p>
+<pre class="codehilite"><code class="language-text">https://[CreatorWebsite]/[pathToSpdx]/[DocumentName]-[UUID]#[ElementName]
+</code></pre>
+
+<p>where:</p>
+<ul>
+<li><code>CreatorWebsite</code> is a website hosted by the creator of the document.
+  (e.g. an SPDX document provided by the SPDX project would be <code>spdx.org</code>)</li>
+<li><code>PathToSpdx</code> is a path to where SPDX documents are stored on the website.</li>
+<li><code>DocumentName</code> is a name given to the SPDX document,
+  typically the primary package name followed by its version.</li>
+<li><code>UUID</code> is a universally unique identifier.
+  The UUID could be a random UUID or a name-based version-5 UUID generated from
+  an SHA-1 hash known to be unique for the specific SPDX document version.</li>
+<li><code>ElementName</code> is a name given to the Element,
+  typically the Element type followed by a sequence number.</li>
+<li>If the creator does not own their own website, a default <code>CreatorWebsite</code> and
+  <code>PathToSpdx</code> can be used: <code>spdx.org/spdxdocs</code>. Note that the SPDX documents
+  are not currently stored or accessible on this website.
+  The URI is only used to create a unique ID following the above conventions.</li>
+</ul>
+<p>The SPDX document spdxId shall not contain a URI "part"
+(e.g. the <code>#</code> character), since it may be used in SPDX Element spdxIds
+to separate the document namespace from the element’s SPDX identifier.</p>
+<p><em>Example</em></p>
+<pre class="codehilite"><code class="language-text">https://spdx.org/spdxdocs/spdx-tools-v2.0.4-a0b427e6-9427-414c-9acc-d6e7c3a0d205
+</code></pre>
+
+<p>The spdxId shall be unique for the SPDX document including the specific
+version of the SPDX document. If the SPDX document is updated, thereby
+creating a new version, a new spdxId for the updated document shall be used.
+There can only be one spdxId for an SPDX document and only one SPDX document
+for a given spdxId.</p>
+<p>NOTE:
+While an spdxId is a URI, it does not need to be accessible.
+It is only intended to provide a unique ID.
+Although an spdxId can point to an actual document on the web,
+this is not always guaranteed.</p>
 <h2 id="metadata">Metadata</h2>
 <p><code>https://spdx.org/rdf/3.1/terms/Core/spdxId</code></p>
 <table>
