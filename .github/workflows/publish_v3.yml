@@ -324,7 +324,7 @@ jobs:
         # Set default version to VERSION_DEFAULT;
         # if not set, the default version will remain the same.
         # Should only be done from the "main" branch.
-        if: github.ref == 'refs/heads/main'
+        # if: github.ref == 'refs/heads/main'
         working-directory: spdx-spec
         run: |
           mike set-default --config-file "$MKDOCS_FULL_YML" --branch $GH_PAGES_BRANCH --push $VERSION_DEFAULT
