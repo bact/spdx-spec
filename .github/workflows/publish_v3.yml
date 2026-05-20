@@ -68,6 +68,8 @@ jobs:
     # Don't run scheduled builds for forks
     if: >-
       github.event_name != 'schedule' || github.repository == 'spdx/spdx-spec'
+    permissions:
+      contents: write   # needed to push to gh-pages
     runs-on: ubuntu-latest
     env:
       REF_SPEC: "${{ github.event.inputs.REF_SPEC || 'develop' }}"   # spdx-spec branch:    "main" or "develop" or "support/x.y" or tag/commit ID
