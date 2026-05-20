@@ -1,18 +1,11 @@
 // Insert <wbr> (word break opportunity) at camelCase boundaries in the
-// RelationshipType page, limited to the From, To, and Relationship class
-// columns (0-based indices 1, 2, 4) to avoid unnecessary work elsewhere.
+// RelationshipType page across all table columns (name, From, To, Description,
+// Relationship class). Only camelCase text is affected; plain prose is unchanged.
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.location.pathname.includes('RelationshipType')) return;
 
-  // Column layout: 0=name, 1=From, 2=To, 3=Description, 4=Relationship class
-  var targetCols = [1, 2, 4];
-
-  document.querySelectorAll('tr').forEach(function (row) {
-    row.querySelectorAll('td').forEach(function (cell, index) {
-      if (targetCols.indexOf(index) !== -1) {
-        insertCamelCaseBreaks(cell);
-      }
-    });
+  document.querySelectorAll('td').forEach(function (cell) {
+    insertCamelCaseBreaks(cell);
   });
 });
 
