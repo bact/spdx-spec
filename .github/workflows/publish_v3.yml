@@ -57,11 +57,11 @@ on:
         description: 'Default version to redirect to, when no version is specified in the URL (e.g., v3.0)'
         required: false
         default: 'v3.1-dev'
-  schedule:
+  # schedule:
     # Rebuild periodically, to apply changes from https://github.com/spdx/spdx-3-model/
-    - cron: "0,30 12-20 * * 1-5"  # Every 30 mins during meeting hours (Mon-Fri)
-    - cron: "0 0,2,4,8,10,22 * * 1-5"  # Every 2 hours off meeting hours (Mon-Fri)
-    - cron: "0 12 * * 6,0"  # Noon once on weekends (Sat & Sun)
+    # - cron: "0,30 12-20 * * 1-5"  # Every 30 mins during meeting hours (Mon-Fri)
+    # - cron: "0 0,2,4,8,10,22 * * 1-5"  # Every 2 hours off meeting hours (Mon-Fri)
+    # - cron: "0 12 * * 6,0"  # Noon once on weekends (Sat & Sun)
 
 jobs:
   build:
