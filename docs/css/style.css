@@ -128,8 +128,7 @@ footer .rst-footer-buttons {
 .wy-table-responsive table td,
 .wy-table-responsive table th {
   white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .rst-content table.docutils td,
@@ -137,6 +136,5 @@ footer .rst-footer-buttons {
 .rst-content table td,
 .rst-content table th {
   white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
