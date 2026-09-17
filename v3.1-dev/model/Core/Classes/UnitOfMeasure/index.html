@@ -138,10 +138,6 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Location/">Location</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../MeasureOfLength/">MeasureOfLength</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../MeasureOfMass/">MeasureOfMass</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../NamespaceMap/">NamespaceMap</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Organization/">Organization</a>
@@ -788,6 +784,8 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Classes/EnergyConsumptionDescription/">EnergyConsumptionDescription</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Classes/InteractionTemplate/">InteractionTemplate</a>
+                </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" >Properties</a>
@@ -811,6 +809,10 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/informationAboutApplication/">informationAboutApplication</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/informationAboutTraining/">informationAboutTraining</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/interactionTemplateDictionary/">interactionTemplateDictionary</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/interactionTemplateString/">interactionTemplateString</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/limitation/">limitation</a>
                 </li>
@@ -948,8 +950,6 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Hardware/Properties/hazard/">hazard</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../Hardware/Properties/mass/">mass</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Hardware/Properties/massOfHardware/">massOfHardware</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Hardware/Properties/partNumber/">partNumber</a>
@@ -1028,8 +1028,6 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/CreateProcess/">CreateProcess</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/DefinedStateProcess/">DefinedStateProcess</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/DestroyAction/">DestroyAction</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/DestroyProcess/">DestroyProcess</a>
@@ -1072,6 +1070,8 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/StateAction/">StateAction</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/StateProcess/">StateProcess</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/StorageAction/">StorageAction</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Classes/StorageProcess/">StorageProcess</a>
@@ -1094,7 +1094,7 @@
     <ul>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/boundaryParameter/">boundaryParameter</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/current/">current</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/currentResponsibleAgent/">currentResponsibleAgent</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/currentState/">currentState</a>
                 </li>
@@ -1104,17 +1104,17 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/dropoffLocation/">dropoffLocation</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/forDropoffLocation/">forDropoffLocation</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/forPickupLocation/">forPickupLocation</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/pickupLocation/">pickupLocation</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedCurrent/">plannedCurrent</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedCurrentResponsibleAgent/">plannedCurrentResponsibleAgent</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedDropoffLocation/">plannedDropoffLocation</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedInspectionLocation/">plannedInspectionLocation</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedPrevious/">plannedPrevious</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedPickupLocation/">plannedPickupLocation</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedPreviousResponsibleAgent/">plannedPreviousResponsibleAgent</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedProductOfResponsibilityChange/">plannedProductOfResponsibilityChange</a>
                 </li>
@@ -1122,7 +1122,7 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/plannedTransportRoute/">plannedTransportRoute</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/previous/">previous</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/previousResponsibleAgent/">previousResponsibleAgent</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../SupplyChain/Properties/responsibilityCategory/">responsibilityCategory</a>
                 </li>
@@ -1295,15 +1295,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <!-- Automatically generated by spec-parser v3.0.1 on 2026-08-30T16:56:33.386410+00:00 -->
+                <!-- Automatically generated by spec-parser v3.0.1 on 2026-09-17T13:55:01.324109+00:00 -->
 <!-- SPDX-License-Identifier: Community-Spec-1.0 -->
 
 <h1 id="unitofmeasure">UnitOfMeasure</h1>
 <h2 id="summary">Summary</h2>
-<p>UnitOfMeasure specify information structures through industry standards for
-Units of Measure, Quantity Kinds, Dimensions and Data Types.</p>
+<p>A class that represents a measured quantity paired with a unit of measure from the QUDT ontology.</p>
 <h2 id="description">Description</h2>
-<p>The QUDT, or "Quantity, Unit, Dimension and Type" schema defines the base classes properties, and restrictions used for modeling physical quantities, units of measure, and their dimensions in various measurement systems.</p>
+<p>UnitOfMeasure class provides a structured way to express measurements: such as size, weight, volume, or other quantities.
+It combines a numerical value <code>quantity</code> with a unit reference <code>unitQUDT</code> that points to a URI in the QUDT (Quantity, Unit, Dimension and Type) ontology.
+The QUDT ontology and specifications are available at <a href="https://www.qudt.org/">www.qudt.org</a>.</p>
 <h2 id="metadata">Metadata</h2>
 <p><code>https://spdx.org/rdf/3/terms/Core/UnitOfMeasure</code></p>
 <table>
@@ -1326,11 +1327,6 @@ Units of Measure, Quantity Kinds, Dimensions and Data Types.</p>
 </table>
 <h2 id="class-hierarchy">Class hierarchy</h2>
 <p><a href="./">/Core/UnitOfMeasure</a></p>
-<h3 id="direct-subclasses">Direct subclasses</h3>
-<ul>
-<li><a href="../MeasureOfLength/">/Core/MeasureOfLength</a></li>
-<li><a href="../MeasureOfMass/">/Core/MeasureOfMass</a></li>
-</ul>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -1350,7 +1346,7 @@ Units of Measure, Quantity Kinds, Dimensions and Data Types.</p>
 </tr>
 <tr>
 <td><a href="../../Properties/unitQUDT/">unitQUDT</a></td>
-<td>xsd:string</td>
+<td>xsd:anyURI</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 </tr>
@@ -1375,12 +1371,13 @@ Units of Measure, Quantity Kinds, Dimensions and Data Types.</p>
 </tr>
 <tr>
 <td><a href="../../Properties/unitQUDT/">unitQUDT</a></td>
-<td>xsd:string</td>
+<td>xsd:anyURI</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
+<!-- EXAMPLE -->
               
             </div>
           </div><footer>

@@ -659,6 +659,7 @@
                     "unevaluatedProperties": false,
                     "anyOf": [
                         { "$ref": "#/$defs/ai_AIPackage" },
+                        { "$ref": "#/$defs/ai_InteractionTemplate" },
                         { "$ref": "#/$defs/build_Build" },
                         { "$ref": "#/$defs/Agent" },
                         { "$ref": "#/$defs/Annotation" },
@@ -726,7 +727,6 @@
                         { "$ref": "#/$defs/supplychain_BoundaryDefinitionProcess" },
                         { "$ref": "#/$defs/supplychain_ChangeAction" },
                         { "$ref": "#/$defs/supplychain_ChangeProcess" },
-                        { "$ref": "#/$defs/supplychain_DefinedStateProcess" },
                         { "$ref": "#/$defs/supplychain_DestroyAction" },
                         { "$ref": "#/$defs/supplychain_DestroyProcess" },
                         { "$ref": "#/$defs/supplychain_HarvestAction" },
@@ -746,6 +746,7 @@
                         { "$ref": "#/$defs/supplychain_ResponsibilityChangeProcess" },
                         { "$ref": "#/$defs/supplychain_State" },
                         { "$ref": "#/$defs/supplychain_StateAction" },
+                        { "$ref": "#/$defs/supplychain_StateProcess" },
                         { "$ref": "#/$defs/supplychain_StorageAction" },
                         { "$ref": "#/$defs/supplychain_StorageProcess" },
                         { "$ref": "#/$defs/supplychain_TestAction" },
@@ -2817,14 +2818,14 @@
         },
         "prop_Requirement_devLifecycleStage": {
                 "enum": [
-                    "spdx:Core/LifecycleScopeType/build",
-                    "spdx:Core/LifecycleScopeType/decommission",
-                    "spdx:Core/LifecycleScopeType/design",
-                    "spdx:Core/LifecycleScopeType/development",
-                    "spdx:Core/LifecycleScopeType/other",
-                    "spdx:Core/LifecycleScopeType/runtime",
-                    "spdx:Core/LifecycleScopeType/test",
-                    "spdx:Core/LifecycleScopeType/update"
+                    "build",
+                    "decommission",
+                    "design",
+                    "development",
+                    "other",
+                    "runtime",
+                    "test",
+                    "update"
                 ]
         },
         "prop_Requirement_rationale": {
@@ -3423,8 +3424,6 @@
                     "type": "object",
                     "unevaluatedProperties": false,
                     "anyOf": [
-                        { "$ref": "#/$defs/MeasureOfLength" },
-                        { "$ref": "#/$defs/MeasureOfMass" },
                         { "$ref": "#/$defs/UnitOfMeasure" }
                     ]
                 },
@@ -3455,7 +3454,7 @@
                     "type": "string"
         },
         "prop_UnitOfMeasure_unitQUDT": {
-                    "type": "string"
+                    "$ref": "#/$defs/anyURI"
         },
         "dataset_ConfidentialityLevelType": {
             "if": {
@@ -4015,9 +4014,9 @@
         },
         "prop_functionalsafety_EvaluationResult_functionalsafety_evaluation": {
                 "enum": [
-                    "spdx:FunctionalSafety/EvaluationResultType/fail",
-                    "spdx:FunctionalSafety/EvaluationResultType/inconclusive",
-                    "spdx:FunctionalSafety/EvaluationResultType/pass"
+                    "fail",
+                    "inconclusive",
+                    "pass"
                 ]
         },
         "prop_functionalsafety_EvaluationResult_functionalsafety_evaluationBasedOn": {
@@ -4291,14 +4290,14 @@
         },
         "prop_functionalsafety_RequirementVerification_functionalsafety_verificationMethod": {
                 "enum": [
-                    "spdx:FunctionalSafety/VerificationType/analysis",
-                    "spdx:FunctionalSafety/VerificationType/assessment",
-                    "spdx:FunctionalSafety/VerificationType/audit",
-                    "spdx:FunctionalSafety/VerificationType/demonstration",
-                    "spdx:FunctionalSafety/VerificationType/inspection",
-                    "spdx:FunctionalSafety/VerificationType/other",
-                    "spdx:FunctionalSafety/VerificationType/review",
-                    "spdx:FunctionalSafety/VerificationType/test"
+                    "analysis",
+                    "assessment",
+                    "audit",
+                    "demonstration",
+                    "inspection",
+                    "other",
+                    "review",
+                    "test"
                 ]
         },
         "prop_functionalsafety_RequirementVerification_functionalsafety_verificationPostcondition": {
@@ -4493,13 +4492,13 @@
             ]
         },
         "prop_hardware_Dimensions_hardware_xAxisLength": {
-                "$ref": "#/$defs/MeasureOfLength_derived"
+                "$ref": "#/$defs/UnitOfMeasure_derived"
         },
         "prop_hardware_Dimensions_hardware_yAxisLength": {
-                "$ref": "#/$defs/MeasureOfLength_derived"
+                "$ref": "#/$defs/UnitOfMeasure_derived"
         },
         "prop_hardware_Dimensions_hardware_zAxisLength": {
-                "$ref": "#/$defs/MeasureOfLength_derived"
+                "$ref": "#/$defs/UnitOfMeasure_derived"
         },
         "hardware_VirtualHardwareModelType": {
             "if": {
@@ -5837,6 +5836,7 @@
                     "unevaluatedProperties": false,
                     "anyOf": [
                         { "$ref": "#/$defs/ai_AIPackage" },
+                        { "$ref": "#/$defs/ai_InteractionTemplate" },
                         { "$ref": "#/$defs/Regulation" },
                         { "$ref": "#/$defs/Specification" },
                         { "$ref": "#/$defs/dataset_DatasetPackage" },
@@ -5857,7 +5857,6 @@
                         { "$ref": "#/$defs/supplychain_BoundaryDefinitionProcess" },
                         { "$ref": "#/$defs/supplychain_ChangeAction" },
                         { "$ref": "#/$defs/supplychain_ChangeProcess" },
-                        { "$ref": "#/$defs/supplychain_DefinedStateProcess" },
                         { "$ref": "#/$defs/supplychain_DestroyAction" },
                         { "$ref": "#/$defs/supplychain_DestroyProcess" },
                         { "$ref": "#/$defs/supplychain_HarvestAction" },
@@ -5877,6 +5876,7 @@
                         { "$ref": "#/$defs/supplychain_ResponsibilityChangeProcess" },
                         { "$ref": "#/$defs/supplychain_State" },
                         { "$ref": "#/$defs/supplychain_StateAction" },
+                        { "$ref": "#/$defs/supplychain_StateProcess" },
                         { "$ref": "#/$defs/supplychain_StorageAction" },
                         { "$ref": "#/$defs/supplychain_StorageProcess" },
                         { "$ref": "#/$defs/supplychain_TestAction" },
@@ -6129,7 +6129,6 @@
                         { "$ref": "#/$defs/supplychain_AssemblyProcess" },
                         { "$ref": "#/$defs/supplychain_BoundaryDefinitionProcess" },
                         { "$ref": "#/$defs/supplychain_ChangeProcess" },
-                        { "$ref": "#/$defs/supplychain_DefinedStateProcess" },
                         { "$ref": "#/$defs/supplychain_DestroyProcess" },
                         { "$ref": "#/$defs/supplychain_HarvestProcess" },
                         { "$ref": "#/$defs/supplychain_InspectionProcess" },
@@ -6138,6 +6137,7 @@
                         { "$ref": "#/$defs/supplychain_PlanProcess" },
                         { "$ref": "#/$defs/supplychain_ReproduceProcess" },
                         { "$ref": "#/$defs/supplychain_ResponsibilityChangeProcess" },
+                        { "$ref": "#/$defs/supplychain_StateProcess" },
                         { "$ref": "#/$defs/supplychain_StorageProcess" },
                         { "$ref": "#/$defs/supplychain_TestProcess" },
                         { "$ref": "#/$defs/supplychain_TransportProcess" }
@@ -6170,10 +6170,10 @@
         },
         "prop_DefinedProcess_processReadiness": {
                 "enum": [
-                    "spdx:Core/ProcessReadinessType/active",
-                    "spdx:Core/ProcessReadinessType/draft",
-                    "spdx:Core/ProcessReadinessType/obsoleted",
-                    "spdx:Core/ProcessReadinessType/other"
+                    "active",
+                    "draft",
+                    "obsoleted",
+                    "other"
                 ]
         },
         "prop_DefinedProcess_rationale": {
@@ -6333,102 +6333,6 @@
                     "test",
                     "update"
                 ]
-        },
-        "MeasureOfLength": {
-            "if": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "const": "MeasureOfLength"
-                    }
-                },
-                "required": ["type"]
-            },
-            "then": {
-                "allOf": [
-                    {
-                        "type": "object",
-                        "properties": {
-                            "@id": { "$ref": "#/$defs/BlankNodeOrIRI" },
-                            "type": { "type": "string" }
-                        }
-                    },
-                    { "$ref": "#/$defs/MeasureOfLength_props" }
-                ]
-            },
-            "else": {
-                "const": "Not a MeasureOfLength"
-            }
-        },
-        "MeasureOfLength_derived": {
-            "anyOf": [
-                {
-                    "type": "object",
-                    "unevaluatedProperties": false,
-                    "anyOf": [
-                        { "$ref": "#/$defs/MeasureOfLength" }
-                    ]
-                },
-                { "$ref": "#/$defs/BlankNodeOrIRI" }
-            ]
-        },
-        "MeasureOfLength_props": {
-            "allOf": [
-                { "$ref": "#/$defs/UnitOfMeasure_props" },
-                {
-                    "type": "object",
-                    "properties": {
-                    }
-                }
-            ]
-        },
-        "MeasureOfMass": {
-            "if": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "const": "MeasureOfMass"
-                    }
-                },
-                "required": ["type"]
-            },
-            "then": {
-                "allOf": [
-                    {
-                        "type": "object",
-                        "properties": {
-                            "@id": { "$ref": "#/$defs/BlankNodeOrIRI" },
-                            "type": { "type": "string" }
-                        }
-                    },
-                    { "$ref": "#/$defs/MeasureOfMass_props" }
-                ]
-            },
-            "else": {
-                "const": "Not a MeasureOfMass"
-            }
-        },
-        "MeasureOfMass_derived": {
-            "anyOf": [
-                {
-                    "type": "object",
-                    "unevaluatedProperties": false,
-                    "anyOf": [
-                        { "$ref": "#/$defs/MeasureOfMass" }
-                    ]
-                },
-                { "$ref": "#/$defs/BlankNodeOrIRI" }
-            ]
-        },
-        "MeasureOfMass_props": {
-            "allOf": [
-                { "$ref": "#/$defs/UnitOfMeasure_props" },
-                {
-                    "type": "object",
-                    "properties": {
-                    }
-                }
-            ]
         },
         "Organization": {
             "if": {
@@ -6647,10 +6551,10 @@
         },
         "prop_Specification_specType": {
                 "enum": [
-                    "spdx:Core/SpecificationType/formalStandard",
-                    "spdx:Core/SpecificationType/other",
-                    "spdx:Core/SpecificationType/regulation",
-                    "spdx:Core/SpecificationType/specification"
+                    "formalStandard",
+                    "other",
+                    "regulation",
+                    "specification"
                 ]
         },
         "expandedlicensing_ConjunctiveLicenseSet": {
@@ -7506,7 +7410,7 @@
                 "$ref": "#/$defs/hardware_Dimensions_derived"
         },
         "prop_hardware_PhysicalHardware_hardware_massOfHardware": {
-                "$ref": "#/$defs/MeasureOfMass_derived"
+                "$ref": "#/$defs/UnitOfMeasure_derived"
         },
         "hardware_ProductSpecification": {
             "if": {
@@ -7654,9 +7558,9 @@
         },
         "prop_hardware_VirtualHardware_hardware_virtualHardwareModel": {
                 "enum": [
-                    "spdx:Hardware/VirtualHardwareModelType/cycle",
-                    "spdx:Hardware/VirtualHardwareModelType/function",
-                    "spdx:Hardware/VirtualHardwareModelType/other"
+                    "cycle",
+                    "function",
+                    "other"
                 ]
         },
         "operations_ExportControlClassificationAssessment": {
@@ -9084,11 +8988,11 @@
                 {
                     "type": "object",
                     "properties": {
-                        "supplychain_plannedCurrent": {
-                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedCurrent"
+                        "supplychain_plannedCurrentResponsibleAgent": {
+                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedCurrentResponsibleAgent"
                         },
-                        "supplychain_plannedPrevious": {
-                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedPrevious"
+                        "supplychain_plannedPreviousResponsibleAgent": {
+                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedPreviousResponsibleAgent"
                         },
                         "supplychain_plannedProductOfResponsibilityChange": {
                             "anyOf": [
@@ -9110,10 +9014,10 @@
                 }
             ]
         },
-        "prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedCurrent": {
+        "prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedCurrentResponsibleAgent": {
                 "$ref": "#/$defs/Agent_derived"
         },
-        "prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedPrevious": {
+        "prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedPreviousResponsibleAgent": {
                 "$ref": "#/$defs/Agent_derived"
         },
         "prop_supplychain_ResponsibilityChangeProcess_supplychain_plannedProductOfResponsibilityChange": {
@@ -9281,22 +9185,22 @@
                 {
                     "type": "object",
                     "properties": {
-                        "supplychain_forDropoffLocation": {
+                        "supplychain_plannedDropoffLocation": {
                             "anyOf": [
                                 {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/$defs/prop_supplychain_TransportProcess_supplychain_forDropoffLocation"
+                                        "$ref": "#/$defs/prop_supplychain_TransportProcess_supplychain_plannedDropoffLocation"
                                     }
                                 }
                             ]
                         },
-                        "supplychain_forPickupLocation": {
+                        "supplychain_plannedPickupLocation": {
                             "anyOf": [
                                 {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/$defs/prop_supplychain_TransportProcess_supplychain_forPickupLocation"
+                                        "$ref": "#/$defs/prop_supplychain_TransportProcess_supplychain_plannedPickupLocation"
                                     }
                                 }
                             ]
@@ -9315,10 +9219,10 @@
                 }
             ]
         },
-        "prop_supplychain_TransportProcess_supplychain_forDropoffLocation": {
+        "prop_supplychain_TransportProcess_supplychain_plannedDropoffLocation": {
                 "$ref": "#/$defs/Location_derived"
         },
-        "prop_supplychain_TransportProcess_supplychain_forPickupLocation": {
+        "prop_supplychain_TransportProcess_supplychain_plannedPickupLocation": {
                 "$ref": "#/$defs/Location_derived"
         },
         "prop_supplychain_TransportProcess_supplychain_plannedTransportRoute": {
@@ -9330,9 +9234,9 @@
                     "type": "object",
                     "unevaluatedProperties": false,
                     "anyOf": [
-                        { "$ref": "#/$defs/supplychain_DefinedStateProcess" },
                         { "$ref": "#/$defs/supplychain_InspectionProcess" },
                         { "$ref": "#/$defs/supplychain_PlanProcess" },
+                        { "$ref": "#/$defs/supplychain_StateProcess" },
                         { "$ref": "#/$defs/supplychain_TestProcess" }
                     ]
                 },
@@ -9348,6 +9252,74 @@
                     }
                 }
             ]
+        },
+        "ai_InteractionTemplate": {
+            "if": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "const": "ai_InteractionTemplate"
+                    }
+                },
+                "required": ["type"]
+            },
+            "then": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "spdxId": { "$ref": "#/$defs/IRI" },
+                            "type": { "type": "string" }
+                        },
+                        "required": ["spdxId"]
+                    },
+                    { "$ref": "#/$defs/ai_InteractionTemplate_props" }
+                ]
+            },
+            "else": {
+                "const": "Not a ai_InteractionTemplate"
+            }
+        },
+        "ai_InteractionTemplate_derived": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "unevaluatedProperties": false,
+                    "anyOf": [
+                        { "$ref": "#/$defs/ai_InteractionTemplate" }
+                    ]
+                },
+                { "$ref": "#/$defs/BlankNodeOrIRI" }
+            ]
+        },
+        "ai_InteractionTemplate_props": {
+            "allOf": [
+                { "$ref": "#/$defs/Artifact_props" },
+                {
+                    "type": "object",
+                    "properties": {
+                        "ai_interactionTemplateDictionary": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/prop_ai_InteractionTemplate_ai_interactionTemplateDictionary"
+                                    }
+                                }
+                            ]
+                        },
+                        "ai_interactionTemplateString": {
+                            "$ref": "#/$defs/prop_ai_InteractionTemplate_ai_interactionTemplateString"
+                        }
+                    }
+                }
+            ]
+        },
+        "prop_ai_InteractionTemplate_ai_interactionTemplateDictionary": {
+                "$ref": "#/$defs/DictionaryEntry_derived"
+        },
+        "prop_ai_InteractionTemplate_ai_interactionTemplateString": {
+                    "type": "string"
         },
         "Action_derived": {
             "anyOf": [
@@ -9487,9 +9459,15 @@
                 {
                     "type": "object",
                     "properties": {
+                        "version": {
+                            "$ref": "#/$defs/prop_Bom_version"
+                        }
                     }
                 }
             ]
+        },
+        "prop_Bom_version": {
+                    "type": "string"
         },
         "Regulation": {
             "if": {
@@ -10373,72 +10351,6 @@
                 }
             ]
         },
-        "supplychain_DefinedStateProcess": {
-            "if": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "const": "supplychain_DefinedStateProcess"
-                    }
-                },
-                "required": ["type"]
-            },
-            "then": {
-                "allOf": [
-                    {
-                        "type": "object",
-                        "properties": {
-                            "spdxId": { "$ref": "#/$defs/IRI" },
-                            "type": { "type": "string" }
-                        },
-                        "required": ["spdxId"]
-                    },
-                    { "$ref": "#/$defs/supplychain_DefinedStateProcess_props" }
-                ]
-            },
-            "else": {
-                "const": "Not a supplychain_DefinedStateProcess"
-            }
-        },
-        "supplychain_DefinedStateProcess_derived": {
-            "anyOf": [
-                {
-                    "type": "object",
-                    "unevaluatedProperties": false,
-                    "anyOf": [
-                        { "$ref": "#/$defs/supplychain_DefinedStateProcess" }
-                    ]
-                },
-                { "$ref": "#/$defs/BlankNodeOrIRI" }
-            ]
-        },
-        "supplychain_DefinedStateProcess_props": {
-            "allOf": [
-                { "$ref": "#/$defs/supplychain_UseProcess_props" },
-                {
-                    "type": "object",
-                    "properties": {
-                        "supplychain_validState": {
-                            "anyOf": [
-                                {
-                                    "type": "array",
-                                    "minItems": 1,
-                                    "items": {
-                                        "$ref": "#/$defs/prop_supplychain_DefinedStateProcess_supplychain_validState"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "required": [
-                        "supplychain_validState"
-                    ]
-                }
-            ]
-        },
-        "prop_supplychain_DefinedStateProcess_supplychain_validState": {
-                "$ref": "#/$defs/supplychain_State_derived"
-        },
         "supplychain_DestroyAction": {
             "if": {
                 "type": "object",
@@ -10832,11 +10744,11 @@
                 {
                     "type": "object",
                     "properties": {
-                        "supplychain_current": {
-                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeAction_supplychain_current"
+                        "supplychain_currentResponsibleAgent": {
+                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeAction_supplychain_currentResponsibleAgent"
                         },
-                        "supplychain_previous": {
-                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeAction_supplychain_previous"
+                        "supplychain_previousResponsibleAgent": {
+                            "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeAction_supplychain_previousResponsibleAgent"
                         },
                         "supplychain_responsibilityCategory": {
                             "$ref": "#/$defs/prop_supplychain_ResponsibilityChangeAction_supplychain_responsibilityCategory"
@@ -10854,17 +10766,17 @@
                         }
                     },
                     "required": [
-                        "supplychain_current",
+                        "supplychain_currentResponsibleAgent",
                         "supplychain_responsibilityCategory",
                         "supplychain_responsibilityChangedOn"
                     ]
                 }
             ]
         },
-        "prop_supplychain_ResponsibilityChangeAction_supplychain_current": {
+        "prop_supplychain_ResponsibilityChangeAction_supplychain_currentResponsibleAgent": {
                 "$ref": "#/$defs/Agent_derived"
         },
-        "prop_supplychain_ResponsibilityChangeAction_supplychain_previous": {
+        "prop_supplychain_ResponsibilityChangeAction_supplychain_previousResponsibleAgent": {
                 "$ref": "#/$defs/Agent_derived"
         },
         "prop_supplychain_ResponsibilityChangeAction_supplychain_responsibilityCategory": {
@@ -10875,6 +10787,72 @@
         },
         "prop_supplychain_ResponsibilityChangeAction_supplychain_responsibilityChangedOn": {
                 "$ref": "#/$defs/Element_derived"
+        },
+        "supplychain_StateProcess": {
+            "if": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "const": "supplychain_StateProcess"
+                    }
+                },
+                "required": ["type"]
+            },
+            "then": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "spdxId": { "$ref": "#/$defs/IRI" },
+                            "type": { "type": "string" }
+                        },
+                        "required": ["spdxId"]
+                    },
+                    { "$ref": "#/$defs/supplychain_StateProcess_props" }
+                ]
+            },
+            "else": {
+                "const": "Not a supplychain_StateProcess"
+            }
+        },
+        "supplychain_StateProcess_derived": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "unevaluatedProperties": false,
+                    "anyOf": [
+                        { "$ref": "#/$defs/supplychain_StateProcess" }
+                    ]
+                },
+                { "$ref": "#/$defs/BlankNodeOrIRI" }
+            ]
+        },
+        "supplychain_StateProcess_props": {
+            "allOf": [
+                { "$ref": "#/$defs/supplychain_UseProcess_props" },
+                {
+                    "type": "object",
+                    "properties": {
+                        "supplychain_validState": {
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "$ref": "#/$defs/prop_supplychain_StateProcess_supplychain_validState"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "supplychain_validState"
+                    ]
+                }
+            ]
+        },
+        "prop_supplychain_StateProcess_supplychain_validState": {
+                "$ref": "#/$defs/supplychain_State_derived"
         },
         "supplychain_StorageAction": {
             "if": {
@@ -11934,7 +11912,7 @@
                 "$ref": "#/$defs/supplychain_State_derived"
         },
         "prop_supplychain_StateAction_supplychain_decisionProcess": {
-                "$ref": "#/$defs/supplychain_DefinedStateProcess_derived"
+                "$ref": "#/$defs/supplychain_StateProcess_derived"
         },
         "supplychain_TestAction": {
             "if": {
@@ -12085,8 +12063,6 @@
                                 "ContactPointRelationship",
                                 "Hash",
                                 "LifecycleScopedRelationship",
-                                "MeasureOfLength",
-                                "MeasureOfMass",
                                 "Organization",
                                 "Person",
                                 "SoftwareAgent",
@@ -12123,6 +12099,7 @@
                                 "supplychain_State",
                                 "supplychain_StorageProcess",
                                 "supplychain_TransportProcess",
+                                "ai_InteractionTemplate",
                                 "Bom",
                                 "Regulation",
                                 "expandedlicensing_CustomLicense",
@@ -12138,7 +12115,6 @@
                                 "supplychain_AssemblyProcess",
                                 "supplychain_BoundaryDefinitionAction",
                                 "supplychain_ChangeProcess",
-                                "supplychain_DefinedStateProcess",
                                 "supplychain_DestroyAction",
                                 "supplychain_HarvestAction",
                                 "supplychain_InspectionProcess",
@@ -12146,6 +12122,7 @@
                                 "supplychain_PlanProcess",
                                 "supplychain_ReproduceAction",
                                 "supplychain_ResponsibilityChangeAction",
+                                "supplychain_StateProcess",
                                 "supplychain_StorageAction",
                                 "supplychain_TestProcess",
                                 "supplychain_TransportAction",
@@ -12244,8 +12221,6 @@
                 { "$ref": "#/$defs/ContactPointRelationship" },
                 { "$ref": "#/$defs/Hash" },
                 { "$ref": "#/$defs/LifecycleScopedRelationship" },
-                { "$ref": "#/$defs/MeasureOfLength" },
-                { "$ref": "#/$defs/MeasureOfMass" },
                 { "$ref": "#/$defs/Organization" },
                 { "$ref": "#/$defs/Person" },
                 { "$ref": "#/$defs/SoftwareAgent" },
@@ -12282,6 +12257,7 @@
                 { "$ref": "#/$defs/supplychain_State" },
                 { "$ref": "#/$defs/supplychain_StorageProcess" },
                 { "$ref": "#/$defs/supplychain_TransportProcess" },
+                { "$ref": "#/$defs/ai_InteractionTemplate" },
                 { "$ref": "#/$defs/Bom" },
                 { "$ref": "#/$defs/Regulation" },
                 { "$ref": "#/$defs/expandedlicensing_CustomLicense" },
@@ -12297,7 +12273,6 @@
                 { "$ref": "#/$defs/supplychain_AssemblyProcess" },
                 { "$ref": "#/$defs/supplychain_BoundaryDefinitionAction" },
                 { "$ref": "#/$defs/supplychain_ChangeProcess" },
-                { "$ref": "#/$defs/supplychain_DefinedStateProcess" },
                 { "$ref": "#/$defs/supplychain_DestroyAction" },
                 { "$ref": "#/$defs/supplychain_HarvestAction" },
                 { "$ref": "#/$defs/supplychain_InspectionProcess" },
@@ -12305,6 +12280,7 @@
                 { "$ref": "#/$defs/supplychain_PlanProcess" },
                 { "$ref": "#/$defs/supplychain_ReproduceAction" },
                 { "$ref": "#/$defs/supplychain_ResponsibilityChangeAction" },
+                { "$ref": "#/$defs/supplychain_StateProcess" },
                 { "$ref": "#/$defs/supplychain_StorageAction" },
                 { "$ref": "#/$defs/supplychain_TestProcess" },
                 { "$ref": "#/$defs/supplychain_TransportAction" },
