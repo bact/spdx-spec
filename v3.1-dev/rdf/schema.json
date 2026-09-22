@@ -429,12 +429,12 @@
                 }
             ]
         },
-        "ContactPointRelationshipType": {
+        "ContactType": {
             "if": {
                 "type": "object",
                 "properties": {
                     "type": {
-                        "const": "ContactPointRelationshipType"
+                        "const": "ContactType"
                     }
                 },
                 "required": ["type"]
@@ -448,30 +448,30 @@
                             "type": { "type": "string" }
                         }
                     },
-                    { "$ref": "#/$defs/ContactPointRelationshipType_props" }
+                    { "$ref": "#/$defs/ContactType_props" }
                 ]
             },
             "else": {
-                "const": "Not a ContactPointRelationshipType"
+                "const": "Not a ContactType"
             }
         },
-        "ContactPointRelationshipType_derived": {
+        "ContactType_derived": {
             "anyOf": [
                 {
                     "type": "object",
                     "unevaluatedProperties": false,
                     "anyOf": [
-                        { "$ref": "#/$defs/ContactPointRelationshipType" }
+                        { "$ref": "#/$defs/ContactType" }
                     ]
                 },
-                { "const": "spdx:Core/ContactPointRelationshipType/compliance" },
-                { "const": "spdx:Core/ContactPointRelationshipType/other" },
-                { "const": "spdx:Core/ContactPointRelationshipType/securityVulnerability" },
-                { "const": "spdx:Core/ContactPointRelationshipType/support" },
+                { "const": "spdx:Core/ContactType/compliance" },
+                { "const": "spdx:Core/ContactType/other" },
+                { "const": "spdx:Core/ContactType/securityVulnerability" },
+                { "const": "spdx:Core/ContactType/support" },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
             ]
         },
-        "ContactPointRelationshipType_props": {
+        "ContactType_props": {
             "allOf": [
                 { "$ref": "#/$defs/SHACLClass" },
                 {
@@ -2568,6 +2568,7 @@
                     "hasExample",
                     "hasHost",
                     "hasInput",
+                    "hasInstall",
                     "hasMetadata",
                     "hasOptionalComponent",
                     "hasOptionalDependency",
@@ -2581,6 +2582,7 @@
                     "hasStaticLink",
                     "hasTest",
                     "hasTestCase",
+                    "hasUninstall",
                     "hasVariant",
                     "implementedBy",
                     "invokedBy",
@@ -2748,6 +2750,7 @@
                 { "const": "spdx:Core/RelationshipType/hasExample" },
                 { "const": "spdx:Core/RelationshipType/hasHost" },
                 { "const": "spdx:Core/RelationshipType/hasInput" },
+                { "const": "spdx:Core/RelationshipType/hasInstall" },
                 { "const": "spdx:Core/RelationshipType/hasMetadata" },
                 { "const": "spdx:Core/RelationshipType/hasOptionalComponent" },
                 { "const": "spdx:Core/RelationshipType/hasOptionalDependency" },
@@ -2761,6 +2764,7 @@
                 { "const": "spdx:Core/RelationshipType/hasStaticLink" },
                 { "const": "spdx:Core/RelationshipType/hasTest" },
                 { "const": "spdx:Core/RelationshipType/hasTestCase" },
+                { "const": "spdx:Core/RelationshipType/hasUninstall" },
                 { "const": "spdx:Core/RelationshipType/hasVariant" },
                 { "const": "spdx:Core/RelationshipType/implementedBy" },
                 { "const": "spdx:Core/RelationshipType/invokedBy" },
@@ -2899,11 +2903,11 @@
         },
         "prop_Requirement_requirementStatus": {
                 "enum": [
-                    "spdx:Core/RequirementStatusType/active",
-                    "spdx:Core/RequirementStatusType/backlog",
-                    "spdx:Core/RequirementStatusType/draft",
-                    "spdx:Core/RequirementStatusType/retired",
-                    "spdx:Core/RequirementStatusType/reviewable"
+                    "active",
+                    "backlog",
+                    "draft",
+                    "retired",
+                    "reviewable"
                 ]
         },
         "prop_Requirement_requirementUID": {
@@ -4992,12 +4996,12 @@
                         }
                     ]
         },
-        "service_AuthenticationProtocolType": {
+        "service_KeyValidationProtocolType": {
             "if": {
                 "type": "object",
                 "properties": {
                     "type": {
-                        "const": "service_AuthenticationProtocolType"
+                        "const": "service_KeyValidationProtocolType"
                     }
                 },
                 "required": ["type"]
@@ -5011,30 +5015,29 @@
                             "type": { "type": "string" }
                         }
                     },
-                    { "$ref": "#/$defs/service_AuthenticationProtocolType_props" }
+                    { "$ref": "#/$defs/service_KeyValidationProtocolType_props" }
                 ]
             },
             "else": {
-                "const": "Not a service_AuthenticationProtocolType"
+                "const": "Not a service_KeyValidationProtocolType"
             }
         },
-        "service_AuthenticationProtocolType_derived": {
+        "service_KeyValidationProtocolType_derived": {
             "anyOf": [
                 {
                     "type": "object",
                     "unevaluatedProperties": false,
                     "anyOf": [
-                        { "$ref": "#/$defs/service_AuthenticationProtocolType" }
+                        { "$ref": "#/$defs/service_KeyValidationProtocolType" }
                     ]
                 },
-                { "const": "spdx:Service/AuthenticationProtocolType/crl" },
-                { "const": "spdx:Service/AuthenticationProtocolType/ocsp" },
-                { "const": "spdx:Service/AuthenticationProtocolType/other" },
-                { "const": "spdx:Service/AuthenticationProtocolType/tls" },
+                { "const": "spdx:Service/KeyValidationProtocolType/crl" },
+                { "const": "spdx:Service/KeyValidationProtocolType/ocsp" },
+                { "const": "spdx:Service/KeyValidationProtocolType/other" },
                 { "$ref": "#/$defs/BlankNodeOrIRI" }
             ]
         },
-        "service_AuthenticationProtocolType_props": {
+        "service_KeyValidationProtocolType_props": {
             "allOf": [
                 { "$ref": "#/$defs/SHACLClass" },
                 {
@@ -8476,12 +8479,12 @@
                 {
                     "type": "object",
                     "properties": {
-                        "service_serverAuthenticationProtocol": {
+                        "service_serverKeyValidationProtocol": {
                             "anyOf": [
                                 {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/$defs/prop_service_SoftwareService_service_serverAuthenticationProtocol"
+                                        "$ref": "#/$defs/prop_service_SoftwareService_service_serverKeyValidationProtocol"
                                     }
                                 }
                             ]
@@ -8500,12 +8503,11 @@
                 }
             ]
         },
-        "prop_service_SoftwareService_service_serverAuthenticationProtocol": {
+        "prop_service_SoftwareService_service_serverKeyValidationProtocol": {
                 "enum": [
                     "crl",
                     "ocsp",
-                    "other",
-                    "tls"
+                    "other"
                 ]
         },
         "prop_service_SoftwareService_service_serviceHostingCountry": {
@@ -12056,7 +12058,7 @@
                                 "ai_EnergyUnitType",
                                 "ai_SafetyRiskAssessmentType",
                                 "AnnotationType",
-                                "ContactPointRelationshipType",
+                                "ContactType",
                                 "CreationInfo",
                                 "DefinedType",
                                 "DictionaryEntry",
@@ -12110,7 +12112,7 @@
                                 "security_ExploitCatalogType",
                                 "security_SsvcDecisionType",
                                 "security_VexJustificationType",
-                                "service_AuthenticationProtocolType",
+                                "service_KeyValidationProtocolType",
                                 "simplelicensing_LicenseExpression",
                                 "simplelicensing_SimpleLicensingText",
                                 "software_ContentIdentifier",
@@ -12214,7 +12216,7 @@
                 { "$ref": "#/$defs/ai_EnergyUnitType" },
                 { "$ref": "#/$defs/ai_SafetyRiskAssessmentType" },
                 { "$ref": "#/$defs/AnnotationType" },
-                { "$ref": "#/$defs/ContactPointRelationshipType" },
+                { "$ref": "#/$defs/ContactType" },
                 { "$ref": "#/$defs/CreationInfo" },
                 { "$ref": "#/$defs/DefinedType" },
                 { "$ref": "#/$defs/DictionaryEntry" },
@@ -12268,7 +12270,7 @@
                 { "$ref": "#/$defs/security_ExploitCatalogType" },
                 { "$ref": "#/$defs/security_SsvcDecisionType" },
                 { "$ref": "#/$defs/security_VexJustificationType" },
-                { "$ref": "#/$defs/service_AuthenticationProtocolType" },
+                { "$ref": "#/$defs/service_KeyValidationProtocolType" },
                 { "$ref": "#/$defs/simplelicensing_LicenseExpression" },
                 { "$ref": "#/$defs/simplelicensing_SimpleLicensingText" },
                 { "$ref": "#/$defs/software_ContentIdentifier" },
