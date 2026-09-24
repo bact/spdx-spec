@@ -299,6 +299,14 @@ During deserialization, if a string is present in a position where the SPDX 3
 model specifies an object, that string shall be substituted with the resolved
 object possessing the matching `spdxId` or `@id` value.
 
+An object may have a `type`, or keys, from a namespace that the deserializing
+software does not support.
+Because only Element instances have the `spdxId` key, an object with
+an `spdxId` key can be identified as an Element even when its `type`
+is from an unsupported namespace, and references to it can still be resolved.
+The handling of such content is specified in
+[Processing unsupported content](conformance.md#processing-unsupported-content).
+
 ## File naming
 
 An SPDX 3 file should be identifiable within a file system without inspecting
