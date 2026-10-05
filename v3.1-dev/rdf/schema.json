@@ -1185,6 +1185,7 @@
                     "requirementUID",
                     "rorid",
                     "securityOther",
+                    "spdx2iri",
                     "swhid",
                     "swid",
                     "urlScheme",
@@ -1277,6 +1278,7 @@
                 { "const": "spdx:Core/ExternalIdentifierType/requirementUID" },
                 { "const": "spdx:Core/ExternalIdentifierType/rorid" },
                 { "const": "spdx:Core/ExternalIdentifierType/securityOther" },
+                { "const": "spdx:Core/ExternalIdentifierType/spdx2iri" },
                 { "const": "spdx:Core/ExternalIdentifierType/swhid" },
                 { "const": "spdx:Core/ExternalIdentifierType/swid" },
                 { "const": "spdx:Core/ExternalIdentifierType/urlScheme" },
@@ -8546,9 +8548,6 @@
                                 }
                             ]
                         },
-                        "software_artifactSize": {
-                            "$ref": "#/$defs/prop_software_SoftwareArtifact_software_artifactSize"
-                        },
                         "software_attributionText": {
                             "anyOf": [
                                 {
@@ -8558,6 +8557,9 @@
                                     }
                                 }
                             ]
+                        },
+                        "software_byteSize": {
+                            "$ref": "#/$defs/prop_software_SoftwareArtifact_software_byteSize"
                         },
                         "software_contentIdentifier": {
                             "anyOf": [
@@ -8615,12 +8617,12 @@
                     "test"
                 ]
         },
-        "prop_software_SoftwareArtifact_software_artifactSize": {
-                    "type": "integer",
-                    "minimum": 0
-        },
         "prop_software_SoftwareArtifact_software_attributionText": {
                     "type": "string"
+        },
+        "prop_software_SoftwareArtifact_software_byteSize": {
+                    "type": "integer",
+                    "minimum": 0
         },
         "prop_software_SoftwareArtifact_software_contentIdentifier": {
                 "$ref": "#/$defs/software_ContentIdentifier_derived"
