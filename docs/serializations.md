@@ -185,9 +185,13 @@ under the `@graph`.
 An instance of an Extension subclass that is not defined by SPDX (a custom
 extension) shall be serialized as an object inlined in the `extension` array of
 the Element it characterizes.
-It shall not be included as a top-level node under the `@graph`.
+Unlike other non-element data, it shall not be included as a top-level node
+under the `@graph`, since the SPDX 3 JSON Schema does not accept custom
+extension classes there.
 
-The SPDX global JSON-LD context does not define terms for custom extensions.
+The SPDX global JSON-LD context does not define terms for custom extensions,
+and the SPDX 3 JSON Schema requires the `@context` to be the SPDX context URL
+only, so a document cannot add namespace mappings for an extension.
 Therefore, in a custom extension object:
 
 - The value of `type` shall be the full IRI of the extension class.
@@ -195,34 +199,41 @@ Therefore, in a custom extension object:
 - A property value that is an IRI (for example, an entry of a vocabulary, or a
   reference to an Element) shall be written as a
   [node reference](https://www.w3.org/TR/json-ld11/#dfn-node-reference),
-  `{"@id": "<IRI>"}`. A plain JSON string is a literal string, even if it looks
-  like an IRI.
-- A property value with a datatype other than string, boolean, integer, or
-  double shall be written as a
+  such as `{"@id": "<IRI>"}`. A plain JSON string is a literal string, even if
+  it looks like an IRI.
+- A property value with a datatype other than `xsd:string`, `xsd:boolean`, or
+  `xsd:integer` shall be written as a
   [value object](https://www.w3.org/TR/json-ld11/#value-objects),
   `{"@value": "<lexical form>", "@type": "<datatype IRI>"}`.
-  For example, an `xsd:decimal` value shall not be written as a JSON number,
-  since a JSON number without a fraction is read as `xsd:integer` and one with a
-  fraction as `xsd:double`.
+- An `xsd:integer` value written as a JSON number should have no fraction or
+  exponent and an absolute value less than 10^21.
 
-For example:
+JSON-LD maps a JSON number to `xsd:double` if it has a non-zero fractional
+part or an absolute value of at least 10^21, and to `xsd:integer` otherwise
+(see [Data Round Tripping](https://www.w3.org/TR/json-ld11-api/#data-round-tripping)).
+A JSON number therefore cannot carry an `xsd:decimal` or `xsd:double` value
+reliably: `0.35` becomes an `xsd:double` and `2.0` an `xsd:integer`.
+
+For example, an excerpt of an Element with a custom extension:
 
 ```json
-"extension": [
-  {
-    "type": "https://example.org/spdx3-ext/synthetic-data/SyntheticDataExtension",
-    "https://example.org/spdx3-ext/synthetic-data/generationMethod": {
-      "@id": "https://example.org/spdx3-ext/synthetic-data/DataGenerationMethodType/mixed"
-    },
-    "https://example.org/spdx3-ext/synthetic-data/syntheticFraction": {
-      "@value": "0.35",
-      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "https://example.org/spdx3-ext/synthetic-data/generatorModel": {
-      "@id": "https://example.org/spdx/model/teacher-llm"
+{
+  "extension": [
+    {
+      "type": "https://example.org/spdx3-ext/synthetic-data/SyntheticDataExtension",
+      "https://example.org/spdx3-ext/synthetic-data/generationMethod": {
+        "@id": "https://example.org/spdx3-ext/synthetic-data/DataGenerationMethodType/mixed"
+      },
+      "https://example.org/spdx3-ext/synthetic-data/syntheticFraction": {
+        "@value": "0.35",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      },
+      "https://example.org/spdx3-ext/synthetic-data/generatorModel": {
+        "@id": "https://example.org/spdx/model/teacher-llm"
+      }
     }
-  }
-]
+  ]
+}
 ```
 
 ### JSON-LD serialization annotations
