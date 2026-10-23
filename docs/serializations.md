@@ -188,29 +188,37 @@ the Element it characterizes.
 Unlike other non-element data, it shall not be included as a top-level node
 under the `@graph`, since the SPDX 3 JSON Schema does not accept custom
 extension classes there.
+A value of a custom extension property that is an instance of another custom
+class that is not an Element shall likewise be inlined as a nested object,
+following the same rules.
+A custom extension object should not have an `@id`.
 
-The SPDX global JSON-LD context does not define terms for custom extensions,
-and the SPDX 3 JSON Schema requires the `@context` to be the SPDX context URL
-only, so a document cannot add namespace mappings for an extension.
+The SPDX global JSON-LD context does not define terms for custom extensions.
+The SPDX 3.0.x JSON Schema accepts only the SPDX context URL as `@context`,
+so a document cannot rely on namespace mappings for an extension (see
+"Parsing @context" for the namespace map, and
+[spdx-3-model#1476](https://github.com/spdx/spdx-3-model/issues/1476)).
 Therefore, in a custom extension object:
 
 - The value of `type` shall be the full IRI of the extension class.
 - The keys of its properties shall be full IRIs.
-- A property value that is an IRI (for example, an entry of a vocabulary, or a
-  reference to an Element) shall be written as a
+- A property value that is a resource identified by an IRI (for example, an
+  entry of a vocabulary, or an Element) shall be written as a
   [node reference](https://www.w3.org/TR/json-ld11/#dfn-node-reference),
   such as `{"@id": "<IRI>"}`. A plain JSON string is a literal string, even if
-  it looks like an IRI.
-- A property value with a datatype other than `xsd:string`, `xsd:boolean`, or
-  `xsd:integer` shall be written as a
+  it looks like an IRI. A literal of datatype `xsd:anyURI` is a typed value,
+  not a node reference (see the next item).
+- A property value with a datatype other than `xsd:string` or `xsd:boolean`
+  shall be written as a
   [value object](https://www.w3.org/TR/json-ld11/#value-objects),
-  `{"@value": "<lexical form>", "@type": "<datatype IRI>"}`.
-- An `xsd:integer` value written as a JSON number should have no fraction or
-  exponent and an absolute value less than 10^21.
+  `{"@value": "<lexical form>", "@type": "<datatype IRI>"}`, except that an
+  `xsd:integer` value may be written as a JSON number if it has no fraction
+  or exponent and its absolute value is less than 1e21.
 
-JSON-LD maps a JSON number to `xsd:double` if it has a non-zero fractional
-part or an absolute value of at least 10^21, and to `xsd:integer` otherwise
-(see [Data Round Tripping](https://www.w3.org/TR/json-ld11-api/#data-round-tripping)).
+The JSON-LD 1.1
+[Object to RDF Conversion](https://www.w3.org/TR/json-ld11-api/#object-to-rdf-conversion)
+maps a JSON number to `xsd:double` if it has a non-zero fractional part or an
+absolute value of at least 1e21, and to `xsd:integer` otherwise.
 A JSON number therefore cannot carry an `xsd:decimal` or `xsd:double` value
 reliably: `0.35` becomes an `xsd:double` and `2.0` an `xsd:integer`.
 
