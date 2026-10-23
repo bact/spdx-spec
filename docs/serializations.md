@@ -180,6 +180,51 @@ classes) may be inlined, or they may be included as a top-level
 [blank node](https://www.w3.org/TR/rdf12-concepts/#section-blank-nodes)
 under the `@graph`.
 
+### Extensions
+
+An instance of an Extension subclass that is not defined by SPDX (a custom
+extension) shall be serialized as an object inlined in the `extension` array of
+the Element it characterizes.
+It shall not be included as a top-level node under the `@graph`.
+
+The SPDX global JSON-LD context does not define terms for custom extensions.
+Therefore, in a custom extension object:
+
+- The value of `type` shall be the full IRI of the extension class.
+- The keys of its properties shall be full IRIs.
+- A property value that is an IRI (for example, an entry of a vocabulary, or a
+  reference to an Element) shall be written as a
+  [node reference](https://www.w3.org/TR/json-ld11/#dfn-node-reference),
+  `{"@id": "<IRI>"}`. A plain JSON string is a literal string, even if it looks
+  like an IRI.
+- A property value with a datatype other than string, boolean, integer, or
+  double shall be written as a
+  [value object](https://www.w3.org/TR/json-ld11/#value-objects),
+  `{"@value": "<lexical form>", "@type": "<datatype IRI>"}`.
+  For example, an `xsd:decimal` value shall not be written as a JSON number,
+  since a JSON number without a fraction is read as `xsd:integer` and one with a
+  fraction as `xsd:double`.
+
+For example:
+
+```json
+"extension": [
+  {
+    "type": "https://example.org/spdx3-ext/synthetic-data/SyntheticDataExtension",
+    "https://example.org/spdx3-ext/synthetic-data/generationMethod": {
+      "@id": "https://example.org/spdx3-ext/synthetic-data/DataGenerationMethodType/mixed"
+    },
+    "https://example.org/spdx3-ext/synthetic-data/syntheticFraction": {
+      "@value": "0.35",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "https://example.org/spdx3-ext/synthetic-data/generatorModel": {
+      "@id": "https://example.org/spdx/model/teacher-llm"
+    }
+  }
+]
+```
+
 ### JSON-LD serialization annotations
 
 To assist implementers in developing software bindings and serialization
@@ -245,6 +290,11 @@ The SPDX 3 JSON Schema is available at:
 
 The SPDX 3 OWL ontology is available at:
 <https://spdx.org/rdf/3.1/spdx-model.ttl>
+
+The SPDX 3 JSON Schema and OWL ontology do not contain the constraints of
+custom extensions.
+The data of a custom extension should be validated separately against the
+definition of that extension, if available.
 
 ### Examples
 
