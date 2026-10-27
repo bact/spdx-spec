@@ -230,7 +230,7 @@ For example, an excerpt of an Element with a custom extension:
     {
       "type": "https://example.org/spdx3-ext/synthetic-data/SyntheticDataExtension",
       "https://example.org/spdx3-ext/synthetic-data/generationMethod": {
-        "@id": "https://example.org/spdx3-ext/synthetic-data/DataGenerationMethodType/mixed"
+        "@id": "https://example.org/spdx3-ext/synthetic-data/DataGenerationMethod/mixed"
       },
       "https://example.org/spdx3-ext/synthetic-data/syntheticFraction": {
         "@value": "0.35",
