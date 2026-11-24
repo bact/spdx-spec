@@ -384,6 +384,8 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Vocabularies/LifecycleScopeType/">LifecycleScopeType</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Core/Vocabularies/Modality/">Modality</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Vocabularies/PresenceType/">PresenceType</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Core/Vocabularies/ProcessReadinessType/">ProcessReadinessType</a>
@@ -474,7 +476,11 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Software/Properties/homePage/">homePage</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Software/Properties/inputModality/">inputModality</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Software/Properties/lineRange/">lineRange</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Software/Properties/outputModality/">outputModality</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Software/Properties/packageUrl/">packageUrl</a>
                 </li>
@@ -770,6 +776,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" >Classes</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Classes/AIAgent/">AIAgent</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Classes/AIPackage/">AIPackage</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Classes/EnergyConsumption/">EnergyConsumption</a>
@@ -782,6 +790,14 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" >Properties</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/agentCapability/">agentCapability</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/agentCommunicationProtocol/">agentCommunicationProtocol</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/agentMemoryMode/">agentMemoryMode</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/agentTrustLevel/">agentTrustLevel</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/autonomyType/">autonomyType</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Properties/domain/">domain</a>
@@ -830,6 +846,10 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" >Vocabularies</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Vocabularies/AgentMemoryMode/">AgentMemoryMode</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../AI/Vocabularies/AgentTrustLevel/">AgentTrustLevel</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Vocabularies/EnergyUnitType/">EnergyUnitType</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../AI/Vocabularies/SafetyRiskAssessmentType/">SafetyRiskAssessmentType</a>
@@ -1166,11 +1186,11 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentContext/">assessmentContext</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentResult/">assessmentResult</a>
-                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessmentTime/">assessmentTime</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/assessor/">assessor</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/contributionProcess/">contributionProcess</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/exportClassification/">exportClassification</a>
                 </li>
@@ -1180,6 +1200,10 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/exportingCountry/">exportingCountry</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/participationAgreement/">participationAgreement</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectCharter/">projectCharter</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectContract/">projectContract</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectOwner/">projectOwner</a>
@@ -1187,6 +1211,10 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectSponsor/">projectSponsor</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectTitle/">projectTitle</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/projectUrl/">projectUrl</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/technicalScope/">technicalScope</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Operations/Properties/weight/">weight</a>
                 </li>
@@ -1299,7 +1327,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <!-- Automatically generated by spec-parser v3.0.1 on 2026-11-07T08:01:27.462956+00:00 -->
+                <!-- Automatically generated by spec-parser v3.0.1 on 2026-11-24T21:55:59.681523+00:00 -->
 <!-- SPDX-License-Identifier: Community-Spec-1.0 -->
 
 <h1 id="responsibilitychangeaction">ResponsibilityChangeAction</h1>
